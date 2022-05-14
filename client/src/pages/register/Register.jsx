@@ -1,6 +1,6 @@
-import "./login.css";
+import "./register.css";
 
-export default function Login() {
+export default function Register() {
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -14,11 +14,13 @@ export default function Login() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
+            <input placeholder="Ad" className="loginInput"></input>
+            <input placeholder="Soyad" className="loginInput"></input>
             <input placeholder="Email" className="loginInput"></input>
             <input placeholder="Parola" className="loginInput"></input>
-            <button className="loginButton">Giriş yap</button>
-            <span className="loginForgot">Parolanı mı unuttun?</span>
-            <button className="loginRegister">Yeni bir hesap aç</button>
+            <input placeholder="Telefon" className="loginInput"></input>
+            <button className="loginButton">Kayıt ol</button>
+            <button className="loginRegister">Hesabına giriş yap</button>
           </div>
         </div>
       </div>

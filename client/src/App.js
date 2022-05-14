@@ -1,9 +1,8 @@
 import Car from "./pages/home/car/Car";
-import {Person} from "@mui/icons-material";
-import Login from "./pages/login/Login";
+import House from "./pages/home/house/House";
 
 function App() {
-  return <Login/>
+  return <House/>
 }
 
 export default App;

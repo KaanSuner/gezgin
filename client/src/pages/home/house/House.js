@@ -1,3 +1,9 @@
+import React from 'react'
+
 export default function House() {
-  return <div>this is house home page</div>;
+  return (
+    <div>House</div>
+  )
 }
+
+
