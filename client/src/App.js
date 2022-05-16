@@ -1,8 +1,18 @@
-import Car from "./pages/home/car/Car";
-import House from "./pages/home/house/House";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WelcomeCar from "./pages/home/car/welcome/WelcomeCar.js";
+import WelcomeHouse from "./pages/home/house/welcome/WelcomeHouse.jsx";
+import Login from "./pages/login/Login.jsx";
 
 function App() {
-  return <House/>
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/accomodation" element={<WelcomeHouse/>}></Route>
+        <Route path="/travel" element={<WelcomeCar/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

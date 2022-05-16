@@ -1,13 +1,13 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const userRoute = require("./routes/users");
-const authRoute = require("./routes/auth");
-const carpostRoute = require("./routes/carposts");
-const housepostRoute = require("./routes/houseposts");
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
+import userRoute from "./routes/users.js";
+import authRoute from "./routes/auth.js";
+import carpostRoute from "./routes/carposts.js";
+import housepostRoute from "./routes/houseposts.js";
 
 dotenv.config();
 

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const CarPostSchema = new mongoose.Schema(
   {
     userId: {
@@ -83,4 +83,4 @@ const CarPostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("CarPost", CarPostSchema);
+export default mongoose.model("CarPost", CarPostSchema);
