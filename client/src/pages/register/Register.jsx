@@ -19,6 +19,10 @@ export default function Register() {
             <input placeholder="Email" className="loginInput"></input>
             <input placeholder="Parola" className="loginInput"></input>
             <input placeholder="Telefon" className="loginInput"></input>
+            <span className="loginInput cinsiyet">
+              <input className="gender" type="radio" name="male" value="male"/><span className="color">Erkek</span>
+              <input className="gender" type="radio" name="female" value="female"/><span className="color">Kadın</span>
+            </span>
             <button className="loginButton">Kayıt ol</button>
             <button className="loginRegister">Hesabına giriş yap</button>
           </div>
