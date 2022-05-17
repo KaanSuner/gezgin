@@ -1,0 +1,20 @@
+.image{
+    width: 150px;
+    height: 150px;
+    clip-path: circle();
+    margin-left: 5em;
+    margin-top: 2em;
+}
+.butons{
+    width:80% ;
+    
+}
+.btn{
+    padding: 0.4em;
+    background-color:#8eb7f5 ;
+    margin: 1em;
+}
+.text{
+    text-align: center;
+    margin: 8em auto;
+}

@@ -1,5 +1,4 @@
 import "./register.css";
-import avatar from "./image.jpg";
 
 export default function Register() {
   return (

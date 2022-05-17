@@ -1,17 +1,32 @@
+import avatar from "./image.jpg";
+import "./Profile.css";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Profile(){
     return(
+        <>
+        <Navbar type="list" />
         <div className="container">
             <div className="row">
                 <div className="col-4">
-                    cmabcabh
-                    <button type="button" className="btn btn-danger">Danger</button>
+                    <br /><br />
+                    <img src={avatar} className="image" alt="" />
+                    <br /><br /><br />
+                    <div class="butons btn-group-vertical">
+                        <a href="#" class="btn">Profili düzenle</a>
+                        <a href="#" class="btn">yolculupaylaş</a>
+                        <a href="#" class="btn">Konaklama paylaş</a>
+                        <a href="#" class="btn">yolculuklarım</a>
+                        <a href="#" class="btn">Konaklamalarım</a>
+                        
+                    </div>
                 </div>
                 <div className="col-8">
-                    svffv
+                    <h2 className="text">Merhaba user</h2>
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
