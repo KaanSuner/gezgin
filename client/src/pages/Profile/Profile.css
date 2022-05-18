@@ -2,12 +2,14 @@
     width: 150px;
     height: 150px;
     clip-path: circle();
-    margin-left: 5em;
+    align-items: center;
     margin-top: 2em;
+    display: block;
+    margin: auto;
 }
 .butons{
     width:80% ;
-    
+    padding-left: 40px;
 }
 .btn{
     padding: 0.4em;

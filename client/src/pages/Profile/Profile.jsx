@@ -5,7 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 export default function Profile(){
     return(
         <>
-        <Navbar type="list" />
+        <Navbar/>
         <div className="container">
             <div className="row">
                 <div className="col-4">
@@ -29,6 +29,7 @@ export default function Profile(){
         </>
     )
 }
+
 
 
 // <div class="update-profile">
