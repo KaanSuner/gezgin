@@ -1,6 +1,8 @@
-import avatar from "./image.jpg";
+import avatar from "./avatar.jpg";
 import "./Profile.css";
 import Navbar from "../../components/navbar/Navbar";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Profile(){
     return(
@@ -13,7 +15,7 @@ export default function Profile(){
                     <img src={avatar} className="image" alt="" />
                     <br /><br /><br />
                     <div class="butons btn-group-vertical">
-                        <a href="#" class="btn">Profili düzenle</a>
+                        <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
                         <a href="#" class="btn">yolculupaylaş</a>
                         <a href="#" class="btn">Konaklama paylaş</a>
                         <a href="#" class="btn">yolculuklarım</a>

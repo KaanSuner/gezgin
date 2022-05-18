@@ -1,6 +1,8 @@
 import "./UpdateProfile.css";
 import Navbar from "../../components/navbar/Navbar";
-import avatar from "./image.jpg";
+import avatar from "./avatar.jpg";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function UpdateProfile(){
     return(
@@ -29,7 +31,7 @@ export default function UpdateProfile(){
                     </div>
                 </div>
                 <input type="submit" value="update profile" name="update_profile" class="btn" />
-                <a href="" className="btn delete-btn">Geri dön</a>
+                <li className="btn delete-btn"><Link to={"../Profile"}>Geri Dön</Link></li>
             </form>
         </div>
         </>

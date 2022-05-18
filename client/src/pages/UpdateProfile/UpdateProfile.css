@@ -42,6 +42,10 @@
    font-size: 20px;
    margin-top: 10px;
 }
+li a{
+   color:var(--white);
+   text-decoration: none;
+}
 
 .btn{
    background-color: var(--blue);

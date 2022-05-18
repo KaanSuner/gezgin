@@ -13,7 +13,9 @@ function App() {
         <Route path="/accomodation" element={<WelcomeHouse/>}></Route>
         <Route path="/travel" element={<WelcomeCar/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/" element={<UpdateProfile/>}></Route>
+        <Route path="/Profile" element={<Profile/>}></Route>
+        <Route path="/UpdateProfile" element={<UpdateProfile/>}></Route>
+        <Route path="/" element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>
   )

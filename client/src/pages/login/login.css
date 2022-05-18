@@ -58,7 +58,8 @@
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #1775ee;
+  background-color: brown;
+  /* background-color: #1775ee; */
   color: white;
   font-size: 20px;
   font-weight: 500;
@@ -76,9 +77,14 @@
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #42b72a;
-  color: white;
+  /* background-color: #42b72a; */
+  background-color: turquoise;
+  /* color: white; */
+  color: pink;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+li .loginRegister{
+  list-style-type: none;
 }

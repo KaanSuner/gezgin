@@ -1,7 +1,12 @@
 import "./login.css";
+import Navbar from "../../components/navbar/Navbar";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
+    <>
+    <Navbar/>
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
@@ -18,10 +23,12 @@ export default function Login() {
             <input placeholder="Parola" className="loginInput"></input>
             <button className="loginButton">Giriş yap</button>
             <span className="loginForgot">Parolanı mı unuttun?</span>
+            <li className="loginRegister"><Link to={"../register"}>Yeni bir hesap aç</Link></li>
             <button className="loginRegister">Yeni bir hesap aç</button>
           </div>
         </div>
       </div>
     </div>
-  );
+    </>
+);
 }
