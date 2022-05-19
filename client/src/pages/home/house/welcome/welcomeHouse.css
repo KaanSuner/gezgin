@@ -17,6 +17,7 @@
   padding: 10px;
   border-radius: 10px;
   position: sticky;
+  height: 20em;
 }
 .listResult{
     flex:3;

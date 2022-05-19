@@ -69,6 +69,29 @@ const List = () => {
               </div>
               </a>
 
+              <a href="">
+              <div className="card">
+                <div className="row">
+                  <div className="col-2">
+                    {/* ilan veren kişinin görseli gelecek */}
+                    <img className="imageWelcomeH" src={avatar} alt="" />
+                  </div>
+                  <div className="col-8">
+                    <div className="card-body">
+                      <p className="card-text">
+                        <span><strong>Adres: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum optio reiciendis a dolore, autem eligendi.</span><br/>
+                        <span><strong>Tarih: </strong> 19/05/2022</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                  </div>
+                </div>
+              </div>
+              </a>
+              
+
 
               <a href="">
               <div className="card">
