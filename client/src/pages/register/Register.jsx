@@ -1,4 +1,6 @@
 import "./register.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
@@ -25,7 +27,7 @@ export default function Register() {
             </span>
             <input type="file" className=" selectImg loginInput " accept="image/jpg, image/jpeg, image/png"/>
             <button className="loginButton">Kayıt ol</button>
-            <button className="loginRegister">Hesabına giriş yap</button>
+            <li className="loginRegister"><Link to={"../Login"}>Hesabına giriş yap</Link></li>
           </div>
         </div>
       </div>

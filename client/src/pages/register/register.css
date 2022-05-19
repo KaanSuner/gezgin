@@ -79,7 +79,7 @@
   border-radius: 10px;
   border: none;
   background-color: #42b72a;
-  color: white;
+  color: transparent;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
@@ -98,4 +98,8 @@
   padding-top: 1em;
   font-size: medium;
   color: #908F75;
+}
+
+.loginRegister a:hover {
+  color: white;
 }

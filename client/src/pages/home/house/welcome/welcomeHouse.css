@@ -43,3 +43,19 @@
     align-items: center;
     cursor: pointer;
 }
+.imageWelcomeH{
+  width: 90px;
+  height: 90px;
+}
+a{
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 1em 0.3em ;
+}
+a:hover{
+  color:#6ECF14 ;
+}
+
+
+

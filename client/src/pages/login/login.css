@@ -54,16 +54,20 @@
   outline: none;
 }
 
-.loginButton {
+.loginButtonB {
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color: brown;
-  /* background-color: #1775ee; */
-  color: white;
+  background-color: #1775ee;
+  color: transparent;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+
+
+.loginButtonB a:hover{
+  color: white
 }
 
 .loginForgot {
@@ -77,14 +81,33 @@
   height: 50px;
   border-radius: 10px;
   border: none;
-  /* background-color: #42b72a; */
-  background-color: turquoise;
-  /* color: white; */
-  color: pink;
+  background-color: #42b72a;
+  color: white;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
 }
 li .loginRegister{
   list-style-type: none;
+}
+.loginRegisterL{
+  width: 100%;
+  align-self: center;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #42b72a;
+}
+.loginRegisterL a:hover{
+  color: white;
+}
+.loginRegisterL a:link {
+  text-align: center;
+  display: inline-block;
+  padding-left: 2.5em;
+  padding-top: 0.5em;
 }
