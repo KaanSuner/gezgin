@@ -1,0 +1,23 @@
+.kisiSayısı{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.plus{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.minus{
+    margin-left: 5px;
+}
+.count{
+    background-color: transparent;
+}
+.searchCar{
+    background-color: white;
+    height: 3em;
+    color:#555555 ;
+}
+.searchCar:hover{
+    background-color: #555555;
+    color: white;
+}
