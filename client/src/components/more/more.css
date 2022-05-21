@@ -3,9 +3,10 @@
 }
 .moreP{
     text-align: center;
-    margin-top: 130px;
+    margin-top: auto;
     margin-bottom: auto;
     margin-left: 40px;
     margin-right: 40px;
-    color: #8400ff;;
+    color: #8400ff;
+    /* display: contents; */
 }
