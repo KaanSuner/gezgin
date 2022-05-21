@@ -1,5 +1,5 @@
 import "./UpdateProfile.css";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import avatar from "./avatar.jpg";
 import React from "react";
 import { Link } from "react-router-dom";

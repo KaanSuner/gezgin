@@ -1,4 +1,4 @@
-import TopbarCar from "../../../../components/topbar/car/TopbarCar";
+import Navbar from "../../../../components/Navbar/Navbar";
 import "./welcomeCar.css";
 import { DateRange } from "react-date-range";
 import React, { useState,useEffect } from "react";
@@ -24,7 +24,7 @@ const List = () => {
 
   return (
     <div>
-      <TopbarCar type="list" />
+      <Navbar/>
       <div className="container">
         <div className="listContainer">
           <div className="listWrapper">

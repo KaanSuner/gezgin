@@ -1,16 +1,60 @@
-import "./navbar.css"
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+export default function TopbarHouse() {
+
+const { loggedIn } = true;
+
   return (
-    <div className="navbar">
-      <div className="navContainer">
-        <span className="logo">GEZGİN</span>
-          <div className="navItems">
-          <button className="navButton">Giriş Yap</button>
-          </div>
+    <div className="topbarContainer">
+      <div className="topbarLeft">
+        <span className="logo">Gezgin</span>
+      </div>
+      <div className="topbarRight">
+        { !loggedIn && (
+                <>
+                <Link to={"../register"}>
+                    <button className="Seyahat">
+                        Kayıt ol 
+                        <ion-icon size="medium" name="person-add-outline"></ion-icon>
+                    </button>
+                </Link>
+                <Link to={"../"}>
+                    <button className="Seyahat">
+                        Giriş Yap
+                        <ion-icon size="medium" name="log-in-outline"></ion-icon>
+                    </button>
+                </Link>
+                </>
+        ) }
+        { loggedIn && (
+            <>
+            <Link to={"../Profile"}>
+                <button className="Seyahat">
+                    Profilim 
+                    <ion-icon name="person-outline"></ion-icon>
+                </button>
+            </Link>
+            <Link to={"../travel"}>
+                <button className="Seyahat">
+                    Yolculuk Ara 
+                    <ion-icon name="car-outline"></ion-icon>
+                </button>
+            </Link>
+            <Link to={"../accomodation"}>
+                <button className="Seyahat">
+                    Konaklama Ara 
+                    <ion-icon name="business-outline"></ion-icon>
+                </button>
+            </Link>
+            <Link to={"../"}>
+                <button className="Seyahat">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </button>
+            </Link>
+            </>
+        )}
       </div>
     </div>
-  )
+  );
 }
-
-export default Navbar

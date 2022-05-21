@@ -1,4 +1,4 @@
-import Topbar from "../../../../components/topbar/topbar";
+import Navbar from "../../../../components/Navbar/Navbar";
 import "./welcomeHouse.css";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
@@ -24,7 +24,7 @@ const List = () => {
 
   return (
     <div>
-      <Topbar type="list" />
+      <Navbar/>
       <div className="container">
         <div className="listContainer">
           <div className="listWrapper">
