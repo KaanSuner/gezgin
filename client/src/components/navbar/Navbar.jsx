@@ -8,7 +8,9 @@ const { loggedIn } = true;
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <span className="logo">Gezgin</span>
+        <span className="logo">
+            <a className="logo" href="/">Gezgin</a>
+        </span>
       </div>
       <div className="topbarRight">
         { !loggedIn && (

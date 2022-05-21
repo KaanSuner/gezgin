@@ -27,6 +27,13 @@
     font-weight: bold;
     color: white;
   }
+  .logo a{
+    display: contents;
+  }
+  .logo a:hover{
+    font-size: 43px;
+    color: rgb(255, 255, 255);
+  }
   
   .Hesabim {
     border-radius: 10px;
