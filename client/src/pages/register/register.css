@@ -56,7 +56,7 @@
 }
 
 .loginButton {
-  height: 50px;
+  height: 60px;
   border-radius: 10px;
   border: none;
   background-color: #1775ee;
@@ -72,7 +72,7 @@
   color: #1775ee;
 }
 
-.loginRegister {
+.loginRegisterRegister {
   width: 100%;
   align-self: center;
   height: 50px;
@@ -84,6 +84,7 @@
   font-weight: 500;
   cursor: pointer;
   margin-top: 0.5em;
+  padding-bottom: 0.2em;
 }
 
 .gender{
@@ -99,7 +100,11 @@
   font-size: medium;
   color: #908F75;
 }
-
-.loginRegister a:hover {
+.loginRegisterRegister a{
+  color: rgb(255, 255, 255);
+  display: contents;
+  margin: auto;
+}
+.loginRegisterRegister a:hover {
   color: white;
 }

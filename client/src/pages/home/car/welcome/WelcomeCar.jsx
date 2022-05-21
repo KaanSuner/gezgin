@@ -17,18 +17,6 @@ const List = () => {
     },
   ]);
 
-  const [country, setCountry] = useState([]);
-
-  useEffect( () =>{
-    const getcountry =async ()=>{
-      const res = await fetch("http://localhost/devopsdeveloper/country");
-      const getcon = await res.json();
-console.log(getcon)
-      setCountry(await getcon);
-    }
-    getcountry();
-  })
-
   const [count ,setCount] = useState(0)
   const arttır = () => {
     setCount(count + 1 );

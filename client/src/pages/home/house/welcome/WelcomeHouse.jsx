@@ -1,4 +1,4 @@
-import TopbarHouse from "../../../../components/topbar/house/TopbarHouse";
+import Topbar from "../../../../components/topbar/topbar";
 import "./welcomeHouse.css";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
@@ -17,9 +17,14 @@ const List = () => {
     },
   ]);
 
+  const [count ,setCount] = useState(0)
+  const arttır = () => {
+    setCount(count + 1 );
+  };
+
   return (
     <div>
-      <TopbarHouse type="list" />
+      <Topbar type="list" />
       <div className="container">
         <div className="listContainer">
           <div className="listWrapper">
@@ -119,7 +124,7 @@ const List = () => {
             <div className="listSearch">
               <h1 className="lsTitle"> Konaklama Ara</h1>
               <div className="lsItem">
-                <label>Konaklama Zamanı</label>
+                <label> <strong>Konaklama Zamanı</strong></label>
                 <span onClick={()=>setOpenDate(!openDate)}>{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
                   date[0].endDate,
                   "dd/MM/yyyy"
@@ -133,6 +138,17 @@ const List = () => {
                     ranges={date}
                   />
                 )}
+                 <strong>Konaklama Yeri</strong>
+                <select name="state" className="form-control" id="">
+                  <option > -- Sehir Seç -- </option>
+                  <option > urfa </option>
+                </select>
+                <strong>Kişi Sayısı </strong>
+                <span><button className="plus count" onClick={arttır}><strong>+</strong></button>
+                <h5 className="kisiSayısı">{count}</h5>
+                <button className="minus count" onClick={() => setCount(count - 1)}><strong>-</strong></button></span> 
+                <br></br> <br></br>
+                <button className="searchCar"><strong>Konaklama Bul</strong></button>
               </div>
             </div>
           </div>

@@ -1,12 +1,14 @@
 import "./login.css";
-import Navbar from "../../components/navbar/Navbar";
+// import Navbar from "../../components/navbar/Navbar";
+import Topbar from "../../components/topbar/topbar";
 import React from "react";
 import { Link } from "react-router-dom";
+import { Tooltip } from "react-bootstrap";
 
 export default function Login() {
   return (
     <>
-    <Navbar/>
+    <Topbar/>
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
@@ -18,12 +20,12 @@ export default function Login() {
           </span>
         </div>
         <div className="loginRight">
-          <div className="loginBox">
-            <input placeholder="Email" className="loginInput"></input>
-            <input placeholder="Parola" className="loginInput"></input>
+          <div className="loginBoxLogin">
+            <input placeholder="Email" className="loginInputLogin"></input>
+            <input placeholder="Parola" className="loginInputLogin"></input>
             <li className="loginButtonB"><Link to={"../accomodation"}>Giriş Yap</Link></li>
             <span className="loginForgot">Parolanı mı unuttun?</span>
-            <li className="loginRegisterL"><Link to={"../register"}>Yeni bir hesap aç</Link></li>
+            <li className="loginRegisterLogin"><Link to={"../register"}>Yeni bir hesap aç</Link></li>
           </div>
         </div>
       </div>

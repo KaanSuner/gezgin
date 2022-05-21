@@ -32,7 +32,7 @@
   font-size: 24px;
 }
 
-.loginBox {
+.loginBoxLogin {
   height: 300px;
   padding: 20px;
   background-color: white;
@@ -42,7 +42,7 @@
   justify-content: space-between;
 }
 
-.loginInput {
+.loginInputLogin {
   height: 50px;
   border-radius: 10px;
   border: 1px solid gray;
@@ -50,7 +50,7 @@
   padding-left: 20px;
 }
 
-.loginInput:focus {
+.loginInputLogin:focus {
   outline: none;
 }
 
@@ -65,6 +65,11 @@
   cursor: pointer;
 }
 
+.loginButtonB a{
+  color: rgb(255, 255, 255);
+  display: contents;
+  margin: auto;
+}
 
 .loginButtonB a:hover{
   color: white
@@ -75,22 +80,10 @@
   color: #1775ee;
 }
 
-.loginRegister {
-  width: 60%;
-  align-self: center;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  background-color: #42b72a;
-  color: white;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
-}
-li .loginRegister{
+li .loginRegisterLogin{
   list-style-type: none;
 }
-.loginRegisterL{
+.loginRegisterLogin{
   width: 100%;
   align-self: center;
   height: 50px;
@@ -102,12 +95,17 @@ li .loginRegister{
   cursor: pointer;
   background-color: #42b72a;
 }
-.loginRegisterL a:hover{
+.loginRegisterLogin a{
+  color: rgb(255, 255, 255);
+  display:contents;
+  margin-top: 0;
+}
+.loginRegisterLogin a:hover{
   color: white;
 }
-.loginRegisterL a:link {
+.loginRegisterLogin a:link {
   text-align: center;
   display: inline-block;
   padding-left: 2.5em;
-  padding-top: 0.5em;
+  padding-top:0em;
 }

@@ -27,7 +27,7 @@ export default function Register() {
             </span>
             <input type="file" className=" selectImg loginInput " accept="image/jpg, image/jpeg, image/png"/>
             <button className="loginButton">Kayıt ol</button>
-            <li className="loginRegister"><Link to={"../Login"}>Hesabına giriş yap</Link></li>
+            <li className="loginRegisterRegister"><Link to={"../Login"}>Hesabına giriş yap</Link></li>
           </div>
         </div>
       </div>
