@@ -1,4 +1,5 @@
 import Navbar from "../../../../components/Navbar/Navbar";
+import Footer from "../../../../components/footer/footer";
 import "./welcomeHouse.css";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
@@ -95,8 +96,6 @@ const List = () => {
                 </div>
               </div>
               </a>
-              
-
 
               <a href="">
               <div className="card">
@@ -119,8 +118,9 @@ const List = () => {
                 </div>
               </div>
               </a>
-              
+
             </div>
+
             <div className="listSearch">
               <h1 className="lsTitle"> Konaklama Ara</h1>
               <div className="lsItem">
@@ -154,6 +154,7 @@ const List = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
