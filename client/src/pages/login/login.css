@@ -75,9 +75,11 @@
   color: white
 }
 
-.loginForgot {
+.loginForgot a{
   text-align: center;
-  color: #1775ee;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 li .loginRegisterLogin{
