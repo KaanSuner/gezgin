@@ -1,5 +1,5 @@
 import "./TravelOrAccomodation.css";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import More from "../../components/more/more";
 import Footer from "../../components/footer/footer";
