@@ -1,4 +1,4 @@
-import Navbar from "../../../../components/Navbar/Navbar";
+import Navbar from "../../../../components/navbar/Navbar";
 import Footer from "../../../../components/footer/footer";
 import "./welcomeHouse.css";
 import { DateRange } from "react-date-range";

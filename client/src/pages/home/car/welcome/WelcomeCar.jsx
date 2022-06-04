@@ -1,12 +1,12 @@
-import Navbar from "../../../../components/Navbar/Navbar";
+import Navbar from "../../../../components/navbar/Navbar";
 import "./welcomeCar.css";
+import React from "react";
 import { DateRange } from "react-date-range";
-import React, { useState,useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import avatar from "./avatar.jpg";
-import { Container } from "react-bootstrap";
 
 const List = () => {
 
