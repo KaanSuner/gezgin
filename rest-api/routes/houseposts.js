@@ -25,6 +25,6 @@ router.put("/:id/houseReservation", reserveHouse);
 router.get("/:id", getHouse);
 
 //get all house posts
-router.get("/posts/all", getallHouse);
+router.get("/posts/:id", getallHouse);
 
 export default router;

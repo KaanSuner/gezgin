@@ -24,6 +24,6 @@ router.put("/:id/carReservation", reserveCar);
 router.get("/:id", getCar);
 
 //get all car posts
-router.get("/posts/all", getallCar);
+router.get("/posts/:id", getallCar);
 
 export default router;

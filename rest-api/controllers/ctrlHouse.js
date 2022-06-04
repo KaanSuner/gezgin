@@ -68,7 +68,7 @@ export const reserveHouse = async (req, res, next) => {
 
 export const getallHouse = async (req, res, next) => {
   try {
-    const currentUser = await User.findById(req.body.userId);
+    const currentUser = await User.findById(req.params.userId);
     const userHousePosts = await HousePost.find({
       userId: { $ne: currentUser._id },
     });

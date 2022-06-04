@@ -5,11 +5,8 @@ import More from "../../components/more/more";
 import Footer from "../../components/footer/footer";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Tooltip } from "react-bootstrap";
 import home from "./home.png";
 import car from "./car.png";
-
-
 
 export default function Login() {
   return (
