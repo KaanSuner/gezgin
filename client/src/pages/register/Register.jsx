@@ -22,8 +22,8 @@ export default function Register() {
             <input placeholder="Parola" className="loginInput"></input>
             <input placeholder="Telefon" className="loginInput"></input>
             <span className="loginInput">
-              <input className="gender" type="radio" name="male" value="male"/><span className="color">Erkek</span>
-              <input className="gender" type="radio" name="female" value="female"/><span className="color">Kadın</span>
+              <input className="gender" type="radio" name="gender" value="male"/><span className="color">Erkek</span>
+              <input className="gender" type="radio" name="gender" value="female"/><span className="color">Kadın</span>
             </span>
             <input type="file" className=" selectImg loginInput " accept="image/jpg, image/jpeg, image/png"/>
             <button className="loginButton">Kayıt ol</button>

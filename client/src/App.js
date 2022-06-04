@@ -5,12 +5,14 @@ import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile.jsx";
+import TravelOrAccomodation from "./pages/TravelOrAccomodation/TravelOrAccomodation.jsx"
 
 function App() {
   return(
     <BrowserRouter>
       <Routes>
         <Route path="/accomodation" element={<WelcomeHouse/>}></Route>
+        <Route path="/TravelOrAccomodation" element={<TravelOrAccomodation/>}></Route>
         <Route path="/travel" element={<WelcomeCar/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/Profile" element={<Profile/>}></Route>

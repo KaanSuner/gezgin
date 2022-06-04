@@ -24,7 +24,7 @@ export default function Login() {
           <div className="loginBoxLogin">
             <input placeholder="Email" className="loginInputLogin"></input>
             <input placeholder="Parola" className="loginInputLogin"></input>
-            <li className="loginButtonB"><Link to={"../accomodation"}>Giriş Yap</Link></li>
+            <li className="loginButtonB"><Link to={"../TravelOrAccomodation"}>Giriş Yap</Link></li>
             <span className="loginForgot">Parolanı mı unuttun?</span>
             <li className="loginRegisterLogin"><Link to={"../register"}>Yeni bir hesap aç</Link></li>
           </div>
