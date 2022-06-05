@@ -6,6 +6,7 @@ import Register from "./pages/register/Register.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile.jsx";
 import TravelOrAccomodation from "./pages/TravelOrAccomodation/TravelOrAccomodation.jsx";
+import Forgot from "./pages/ForgotPassword/ForgotPassword.jsx";
 import { AuthContext } from "./context/AuthContext.js";
 import { useContext } from "react";
 
@@ -14,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={user?<TravelOrAccomodation />:<Login />}></Route>
+        <Route exact path="/" element={user?<TravelOrAccomodation />:<Forgot />}></Route>
         <Route path="/accomodation" element={user?<WelcomeHouse />:<Login />}></Route>
         <Route path="/travel" element={user?<WelcomeCar />:<Login />}></Route>
         <Route path="/login" element={user? <Navigate to="/"/> :<Login />}></Route>
@@ -22,7 +23,7 @@ function App() {
         <Route path="/Register" element={user? <Navigate to="/"/> :<Register />}></Route>
         <Route path="/UpdateProfile" element={user?<UpdateProfile />:<Login />}></Route>
       </Routes>
-    </BrowserRouter>
+  </BrowserRouter>
   );
 }
 
