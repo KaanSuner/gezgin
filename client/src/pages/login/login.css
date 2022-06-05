@@ -59,21 +59,14 @@
   border-radius: 10px;
   border: none;
   background-color: #1775ee;
-  color: transparent;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   color: #f0f2f5;
 }
 
-.loginButtonB a{
-  color: rgb(255, 255, 255);
-  display: contents;
-  margin: auto;
-}
-
-.loginButtonB a:hover{
-  color: white
+.loginButtonB:disabled {
+cursor: not-allowed;
 }
 
 .loginForgot a{
@@ -92,21 +85,13 @@ li .loginRegisterLogin{
   height: 50px;
   border-radius: 10px;
   border: none;
-  color: transparent;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   background-color: #42b72a;
   color: #f0f2f5;
 }
-.loginRegisterLogin a{
-  color: rgb(255, 255, 255);
-  display:contents;
-  margin-top: 0;
-}
-.loginRegisterLogin a:hover{
-  color: white;
-}
+
 .loginRegisterLogin a:link {
   text-align: center;
   display: inline-block;

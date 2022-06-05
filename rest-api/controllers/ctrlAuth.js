@@ -10,6 +10,7 @@ export const register = async (req, res, next) => {
     //create new user
     const newUser = new User({
       name: req.body.name,
+      username: req.body.username,
       surname: req.body.surname,
       email: req.body.email,
       password: hashedPassword,

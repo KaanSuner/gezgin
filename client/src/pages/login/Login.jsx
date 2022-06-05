@@ -4,18 +4,30 @@ import Hero from "../../components/Hero/Hero";
 import More from "../../components/more/more";
 import Footer from "../../components/footer/footer";
 import React from "react";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { loginCall } from "../../apiCalls";
+import { AuthContext } from "../../context/AuthContext";
+import { CircularProgress } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  
+
+  const history = useNavigate();
   const email = useRef();
   const password = useRef();
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+
+
   const handleClick = (e) => {
     e.preventDefault();
-    console.log("email");
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
   };
+  const handleClick2 = () => history("/register");
 
+  console.log(user);
   return (
     <>
       <Navbar />
@@ -44,10 +56,27 @@ export default function Login() {
                 className="loginInputLogin"
                 ref={password}
                 required
+                minLength="6"
               ></input>
-              <button className="loginButtonB"> Giriş yap</button>
+              <button
+                className="loginButtonB"
+                type="submit"
+                disabled={isFetching}
+              >
+                {isFetching ? (
+                  <CircularProgress color="inherit" size="20px" />
+                ) : (
+                  "Giriş Yap"
+                )}
+              </button>
               <span className="loginForgot">Parolanı mı unuttun?</span>
-              <button className="loginRegisterLogin"> Kayıt ol</button>
+              <button className="loginRegisterLogin"  onClick={handleClick2}>
+                {isFetching ? (
+                  <CircularProgress color="inherit" size="20px" />
+                ) : (
+                  "Kayıt ol"
+                )}
+              </button>
             </form>
           </div>
         </div>
