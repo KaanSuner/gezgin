@@ -21,7 +21,6 @@ export default function Register() {
   const email = useRef();
   const password = useRef();
   const phone = useRef();
-  const gender = useRef();
   const history = useNavigate();
 
   const handleClick = async (e) => {
