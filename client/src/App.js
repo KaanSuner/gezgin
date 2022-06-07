@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={user?<TravelOrAccomodation />:<ShareTravel />}></Route>
+        <Route exact path="/" element={user?<TravelOrAccomodation />:<Login />}></Route>
         <Route path="/accomodation" element={user?<WelcomeHouse />:<Login />}></Route>
         <Route path="/travel" element={user?<WelcomeCar />:<Login />}></Route>
         <Route path="/login" element={user? <Navigate to="/"/> :<Login />}></Route>
