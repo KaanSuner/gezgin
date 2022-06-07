@@ -1,5 +1,6 @@
 import express from "express";
-const router = express.Router();
+import {verifyUser } from "../utils/verifyToken.js";
+
 import {
   createCar,
   updateCar,
@@ -9,21 +10,25 @@ import {
   getallCar,
 } from "../controllers/ctrlCar.js";
 
-//creat a car post
-router.post("/", createCar);
+const router = express.Router();
+
+//create a car post
+router.post("/", verifyUser, createCar);
+
 //update a car post
+router.put("/:id", verifyUser, updateCar);
 
-router.put("/:id", updateCar);
 //delete a car post
-router.delete("/:id", deleteCar);
-//reserve a car post
+router.delete("/:id", verifyUser, deleteCar);
 
-router.put("/:id/carReservation", reserveCar);
+//reserve a car post
+router.put("/:id/carReservation",verifyUser, reserveCar);
 
 //get a car post
 router.get("/:id", getCar);
 
 //get all car posts
 router.get("/posts/:id", getallCar);
+
 
 export default router;

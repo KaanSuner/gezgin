@@ -41,13 +41,13 @@ const List = () => {
                   <div className="col-8">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Adres: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum optio reiciendis a dolore, autem eligendi.</span><br/>
-                        <span><strong>Tarih: </strong> 19/05/2022</span>
+                        <span><strong>Konum: </strong></span><br/>
+                        <span><strong>Tarih: </strong> 20/05/2022</span>
                       </p>
                     </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">50,00 ₺</p>
                   </div>
                 </div>
               </div>
@@ -63,13 +63,13 @@ const List = () => {
                   <div className="col-8">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Adres: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum optio reiciendis a dolore, autem eligendi.</span><br/>
-                        <span><strong>Tarih: </strong> 19/05/2022</span>
+                        <span><strong>Konum: </strong></span><br/>
+                        <span><strong>Tarih: </strong> 22/05/2022</span>
                       </p>
                     </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">60,00 ₺</p>
                   </div>
                 </div>
               </div>
@@ -85,13 +85,13 @@ const List = () => {
                   <div className="col-8">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Adres: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum optio reiciendis a dolore, autem eligendi.</span><br/>
+                        <span><strong>Konum: </strong></span><br/>
                         <span><strong>Tarih: </strong> 19/05/2022</span>
                       </p>
                     </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">39,00 ₺</p>
                   </div>
                 </div>
               </div>
@@ -107,13 +107,13 @@ const List = () => {
                   <div className="col-8">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Adres: </strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum optio reiciendis a dolore, autem eligendi.</span><br/>
-                        <span><strong>Tarih: </strong> 19/05/2022</span>
+                        <span><strong>Konum: </strong></span><br/>
+                        <span><strong>Tarih: </strong> 23/05/2022</span>
                       </p>
                     </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">79,00 ₺</p>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const List = () => {
                  <strong>Konaklama Yeri</strong>
                 <select name="state" className="form-control" id="">
                   <option > -- Sehir Seç -- </option>
-                  <option > urfa </option>
+                  <option > Antalya </option>
                 </select>
                 <strong>Kişi Sayısı </strong>
                 <span><button className="plus count" onClick={arttır}><strong>+</strong></button>

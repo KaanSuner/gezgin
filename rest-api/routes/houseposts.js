@@ -1,6 +1,7 @@
-import express from "express"
-const router = express.Router();
-import{
+import express from "express";
+import { verifyUser } from "../utils/verifyToken.js";
+
+import {
   createHouse,
   updateHouse,
   deleteHouse,
@@ -9,17 +10,19 @@ import{
   getallHouse,
 } from "../controllers/ctrlHouse.js";
 
-//creat a house post
-router.post("/", createHouse);
-//update a house post
+const router = express.Router();
 
-router.put("/:id", updateHouse);
+//creat a house post
+router.post("/", verifyUser, createHouse);
+
+//update a house post
+router.put("/:id",verifyUser,  updateHouse);
 
 //delete a house post
-router.delete("/:id", deleteHouse);
+router.delete("/:id",verifyUser,  deleteHouse);
 
 //reserve a house post
-router.put("/:id/houseReservation", reserveHouse);
+router.put("/:id/houseReservation",verifyUser,  reserveHouse);
 
 //get a house post
 router.get("/:id", getHouse);

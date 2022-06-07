@@ -20,7 +20,7 @@ export default function Login() {
             <img src={home} className="OptionImage" alt="" />
             <div className="card-body">
                 <h5 className="card-title option-text">Konaklama Bul</h5>
-                <p className="card-text option-text">ebebleblsdvssdbbbbsebsbeeeraberbsesbresrlşedfblşdsf</p>
+                <p className="card-text option-text">Kriterlerine göre en uygun konaklama teklifini bul</p>
             </div>
             </div>
             </Link>
@@ -31,7 +31,7 @@ export default function Login() {
             <img src={car} className="OptionImage" alt="" />
             <div className="card-body">
                 <h5 className="card-title option-text">Seyahat Bul</h5>
-                <p className="card-text option-text ">ebeblebllşedfblşdsf</p>
+                <p className="card-text option-text ">Kriterlerine göre en uygun seyahat teklifini bul</p>
             </div>
             </div>
             </Link>

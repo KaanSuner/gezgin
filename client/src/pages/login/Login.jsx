@@ -1,5 +1,4 @@
 import "./login.css";
-import Navbar from "../../components/navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import More from "../../components/more/more";
 import Footer from "../../components/footer/footer";
@@ -8,15 +7,14 @@ import { useRef, useContext } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
-
+  
   const history = useNavigate();
   const email = useRef();
   const password = useRef();
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
-
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -25,12 +23,12 @@ export default function Login() {
       dispatch
     );
   };
+
   const handleClick2 = () => history("/register");
 
   console.log(user);
   return (
     <>
-      <Navbar />
       <div className="login">
         <div className="loginWrapper">
           <div className="loginLeft">
@@ -69,14 +67,18 @@ export default function Login() {
                   "Giriş Yap"
                 )}
               </button>
-              <span className="loginForgot">Parolanı mı unuttun?</span>
-              <button className="loginRegisterLogin"  onClick={handleClick2}>
+
+              <button className="loginRegisterLogin" onClick={handleClick2}>
                 {isFetching ? (
                   <CircularProgress color="inherit" size="20px" />
                 ) : (
                   "Kayıt ol"
                 )}
               </button>
+
+              <Link to={"./forgotPassword"}>
+                <span className="loginForgot">Parolanı mı unuttun?</span>
+              </Link>
             </form>
           </div>
         </div>

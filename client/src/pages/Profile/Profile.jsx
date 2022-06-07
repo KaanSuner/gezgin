@@ -17,15 +17,15 @@ export default function Profile(){
                     <br /><br /><br />
                     <div class="butons btn-group-vertical">
                         <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
-                        <a href="#" class="btn">yolculupaylaş</a>
-                        <a href="#" class="btn">Konaklama paylaş</a>
-                        <a href="#" class="btn">yolculuklarım</a>
+                        <a href="#" class="btn">Yolculuğunu paylaş</a>
+                        <a href="#" class="btn">Konaklamanı paylaş</a>
+                        <a href="#" class="btn">Yolculuklarım</a>
                         <a href="#" class="btn">Konaklamalarım</a>
                         
                     </div>
                 </div>
                 <div className="col-8">
-                    <h2 className="text">Merhaba user</h2>
+                    <h2 className="text">Merhaba burada profilini yönetebilir ve mevcut tekliflerini gözden geçirebilirsin</h2>
                 </div>
             </div>
         </div>

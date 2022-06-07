@@ -41,8 +41,8 @@ const List = () => {
                   <div className="col-4">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Tarih: </strong> 19/05/2022</span> <br />
-                        <span><strong>Kalan Kişi Sayısı: </strong> 2</span> <br />                        
+                        <span><strong>Tarih: </strong> 20/05/2022</span> <br />
+                        <span><strong>Boş koltuk: </strong> 1</span> <br />                        
                       </p>
                     </div>       
                   </div>
@@ -54,7 +54,7 @@ const List = () => {
                       </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">40,00 ₺</p>
                   </div>
                 </div>
               </div>
@@ -69,8 +69,8 @@ const List = () => {
                   <div className="col-4">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Tarih: </strong> 19/05/2022</span> <br />
-                        <span><strong>Kalan Kişi Sayısı: </strong> 2</span> <br />                        
+                        <span><strong>Tarih: </strong> 25/05/2022</span> <br />
+                        <span><strong>Boş koltuk: </strong> 3</span> <br />                        
                       </p>
                     </div>       
                   </div>
@@ -82,7 +82,7 @@ const List = () => {
                       </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">60,00 TL</p>
                   </div>
                 </div>
               </div>
@@ -97,8 +97,8 @@ const List = () => {
                   <div className="col-4">
                     <div className="card-body">
                       <p className="card-text">
-                        <span><strong>Tarih: </strong> 19/05/2022</span> <br />
-                        <span><strong>Kalan Kişi Sayısı: </strong> 2</span> <br />                        
+                        <span><strong>Tarih: </strong> 24/05/2022</span> <br />
+                        <span><strong>Boş koltuk: </strong> 4</span> <br />                        
                       </p>
                     </div>       
                   </div>
@@ -110,7 +110,7 @@ const List = () => {
                       </div>
                   </div>
                   <div className="col-2">
-                    <p className="fs-4 fw-bolder fiyat">39,00 TL</p>
+                    <p className="fs-4 fw-bolder fiyat">55,00 TL</p>
                   </div>
                 </div>
               </div>
@@ -125,12 +125,12 @@ const List = () => {
                 <strong>Nereden </strong>
                 <select name="state" className="form-control" id="">
                   <option > -- Sehir Seç -- </option>
-                  <option > urfa </option>
+                  <option > Antalya </option>
                 </select>
                 <strong>Nereye </strong>
                 <select name="state" className="form-control" id="">
                   <option > -- Sehir Seç -- </option>
-                  <option > urfa </option>
+                  <option > İstanbul </option>
                 </select>
                 <strong>Kişi Sayısı </strong>
                 <span><button className="plus count" onClick={arttır}><strong>+</strong></button>

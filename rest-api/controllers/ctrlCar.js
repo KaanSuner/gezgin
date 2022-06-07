@@ -70,7 +70,7 @@ export const getCar = async (req, res, next) => {
 
 export const getallCar = async (req, res, next) => {
   try {
-    const currentUser = await User.findById(req.params.userId);
+    const currentUser = await User.findById(req.body.userId);
     const userCarPosts = await CarPost.find({
       userId: { $ne: currentUser._id },
     });

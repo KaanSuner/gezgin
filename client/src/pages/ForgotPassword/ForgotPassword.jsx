@@ -8,7 +8,7 @@ export default function ForgotPassword(){
                 <h3>E-mail adresini giriniz</h3>
                 <input type="email" className="forgotInput" placeholder="E-mail"/><br/>
                 <button className="btn btn-success forgot-btn">Şifreyi sıfırla</button>
-                <Link to={"../Login"}>Geri Dön</Link>
+                <Link to={"../"}>Geri Dön</Link>
             </div>
         </div>
     )

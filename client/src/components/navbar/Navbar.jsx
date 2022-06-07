@@ -5,7 +5,6 @@ import { AuthContext } from "../../context/AuthContext";
 
 export default function Navbar() {
   const { user } = useContext(AuthContext);
-  const { loggedIn } = true;
 
   return (
     <div className="topbarContainer">
