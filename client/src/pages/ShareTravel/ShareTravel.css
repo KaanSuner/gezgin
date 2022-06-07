@@ -1,0 +1,30 @@
+.tarih{
+    width: 30rem;
+    margin: 1rem;
+}
+.shareAcc{
+    margin: 5rem;
+    padding-right: 3rem;
+    padding-left: 4rem;
+}
+h5{
+    margin: 1rem;
+}
+.count{
+    margin: 1rem;
+}
+.inputShare{
+    margin-left: 1rem;
+    border: 1px solid #ccc;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 60%;
+    padding: 12px 20px;
+}
+.butonShare{
+    width: 20%;
+}
+.iconShare{
+    margin: 50px;
+}

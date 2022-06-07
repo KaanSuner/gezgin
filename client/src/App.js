@@ -9,13 +9,15 @@ import TravelOrAccomodation from "./pages/TravelOrAccomodation/TravelOrAccomodat
 import { AuthContext } from "./context/AuthContext.js";
 import { useContext } from "react";
 import Forgot from "./pages/ForgotPassword/ForgotPassword.jsx"
+import ShareAccomodation from "./pages/shareAcc/ShareAcc.jsx"
+import ShareTravel from "./pages/ShareTravel/ShareTravel.jsx"
 
 function App() {
   const { user } = useContext(AuthContext);
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={user?<TravelOrAccomodation />:<Login />}></Route>
+        <Route exact path="/" element={user?<TravelOrAccomodation />:<ShareTravel />}></Route>
         <Route path="/accomodation" element={user?<WelcomeHouse />:<Login />}></Route>
         <Route path="/travel" element={user?<WelcomeCar />:<Login />}></Route>
         <Route path="/login" element={user? <Navigate to="/"/> :<Login />}></Route>
