@@ -22,6 +22,13 @@ const List = () => {
     setCount(count + 1 );
   };
 
+  const azalt = () => {
+    if(count === 0) {
+        return;
+    }
+    setCount(count-1);
+};
+
   return (
     <div>
       <Navbar/>
@@ -135,7 +142,7 @@ const List = () => {
                 <strong>Kişi Sayısı </strong>
                 <span><button className="plus count" onClick={arttır}><strong>+</strong></button>
                 <h5 className="kisiSayısı">{count}</h5>
-                <button className="minus count" onClick={() => setCount(count - 1)}><strong>-</strong></button></span> 
+                <button className="minus count" onClick={azalt}><strong>-</strong></button></span> 
                 <br></br> <br></br>
                 <button className="searchCar"><strong>Yolculuk Bul</strong></button>
               </div>
