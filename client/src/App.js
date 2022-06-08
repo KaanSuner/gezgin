@@ -12,6 +12,7 @@ import Forgot from "./pages/ForgotPassword/ForgotPassword.jsx"
 import ShareAccomodation from "./pages/shareAcc/ShareAcc.jsx"
 import ShareTravel from "./pages/ShareTravel/ShareTravel.jsx"
 import SelectTravel from "./pages/SelectTravel/SelectTravel.jsx"
+import MyTravels from "./pages/MyTravels/MyTravels.jsx"
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/shareAcc" element={user?<ShareAccomodation/>:<Login/>}></Route>
         <Route path="/shareTravel" element={user?<ShareTravel/>:<Login/>}></Route>
         <Route path="/SelectTravel" element={<SelectTravel/>}></Route>
+        <Route path="/MyTravel" element={<MyTravels/>}></Route>
       </Routes>
   </BrowserRouter>
   );
