@@ -19,7 +19,7 @@ export default function Profile(){
                         <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
                         <li className="btn"><Link  to={"../shareAcc"}>Yolculuk Paylaş</Link></li>
                         <li className="btn"><Link  to={"../ShareTravel"}>Konaklama Paylaş</Link></li>
-                        <a href="#" class="btn">Yolculuklarım</a>
+                        <li className="btn"><Link  to={"../MyTravel"}>Yolculuklarım</Link></li>
                         <a href="#" class="btn">Konaklamalarım</a>
                         
                     </div>
