@@ -31,7 +31,7 @@ const List = () => {
             <div className="listResult">
               {/* ilan verenlerin listesi çekilecek  her bir sorgu card olacak*/}
 
-              <a href="">
+              <a href="../../../SelectTravel">
               <div className="card">
                 <div className="row">
                   <div className="col-2">
@@ -59,7 +59,7 @@ const List = () => {
                 </div>
               </div>
               </a>
-              <a href="">
+              <a href="../../../SelectTravel">
               <div className="card">
                 <div className="row">
                   <div className="col-2">
@@ -87,7 +87,7 @@ const List = () => {
                 </div>
               </div>
               </a>
-              <a href="">
+              <a href="../../../SelectTravel">
               <div className="card">
                 <div className="row">
                   <div className="col-2">
