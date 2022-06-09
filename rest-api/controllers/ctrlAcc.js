@@ -51,15 +51,15 @@ export const reserveAcc = async (req, res, next) => {
   try {
     const acc = await Acc.findById(req.params.id);
     if (acc.userId !== req.body.userId) {
-      if (!acc.persons.includes(req.body.userId)) {
-        await acc.updateOne({ $push: { persons: req.body.userId } });
+      if (!acc.bookers.includes(req.body.userId)) {
+        await acc.updateOne({ $push: { bookers: req.body.userId } });
         res.status(200).json("The accomodation has been reserved.");
       } else {
-        await acc.updateOne({ $pull: { persons: req.body.userId } });
-        res.status(403).json("Accomodation reservation has been removed");
+        await acc.updateOne({ $pull: { bookers: req.body.userId } });
+        res.status(403).json("Accomodation reservation has been cancelled.");
       }
     } else {
-      res.status(403).json("you can not make a reservation for your accomodation offer ");
+      res.status(403).json("You cannot book your own accomodation offer. ");
     }
   } catch (err) {
     next(err);

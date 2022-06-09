@@ -12,22 +12,22 @@ import {
 
 const router = express.Router();
 
-//creat a house post
-router.post("/", verifyUser, createAcc);
+//creat a accomodation offer
+router.post("/:id/create", verifyUser, createAcc);
 
-//update a house post
-router.put("/:id",verifyUser,  updateAcc);
+//update a accomodation offer
+router.put("/:id/update",verifyUser,  updateAcc);
 
-//delete a house post
-router.delete("/:id",verifyUser,  deleteAcc);
+//delete aaccomodation offer
+router.delete("/:id/delete",verifyUser,  deleteAcc);
 
-//reserve a house post
-router.put("/:id/houseReservation",verifyUser,  reserveAcc);
+//reserve or cancel a accomodation offer 
+router.put("/:id/reserve",verifyUser,  reserveAcc);
 
-//get a house post
-router.get("/:id", getAcc);
+//get a accommodation offer
+router.get("/:id/get", getAcc);
 
-//get all house posts
-router.get("/posts/:id", getallAcc);
+//get all accomodation offers
+router.get("/:id/getAll", getallAcc);
 
 export default router;

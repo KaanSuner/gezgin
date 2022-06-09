@@ -47,7 +47,7 @@ const TravelSchema = new mongoose.Schema(
       required: true,
     },
 
-    persons: {
+    bookers: {
       type: Array,
       required: true,
       default: [],

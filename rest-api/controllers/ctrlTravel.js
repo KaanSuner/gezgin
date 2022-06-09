@@ -42,22 +42,21 @@ export const reserveTravel = async (req, res, next) => {
   try {
     const travel = await Travel.findById(req.params.id);
     if (travel.userId !== req.body.userId) {
-      if (!travel.persons.includes(req.body.userId)) {
-        await travel.updateOne({ $push: { persons: req.body.userId } });
+      if (!travel.bookers.includes(req.body.userId)) {
+        await travel.updateOne({ $push: { bookers: req.body.userId } });
         res.status(200).json("Travel has been reserved.");
       } else {
-        await travel.updateOne({ $pull: { persons: req.body.userId } });
-        res.status(403).json("Travel reservation has been removed");
+        await travel.updateOne({ $pull: { bookers: req.body.userId } });
+        res.status(403).json("Travel reservation has been cancelled.");
       }
     } else {
-      res
-        .status(403)
-        .json("you can not make a travel reservation for your own vehicle");
+      res.status(403).json("You cannot book your own travel offer.");
     }
   } catch (err) {
     next(err);
   }
 };
+
 
 export const getTravel = async (req, res, next) => {
   try {

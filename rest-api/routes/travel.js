@@ -12,23 +12,23 @@ import {
 
 const router = express.Router();
 
-//create a car post
-router.post("/", verifyUser, createTravel);
+//create a travel offer
+router.post("/:id/create", verifyUser, createTravel);
 
-//update a car post
-router.put("/:id", verifyUser, updateTravel);
+//update a travel offer
+router.put("/:id/update", verifyUser, updateTravel);
 
-//delete a car post
-router.delete("/:id", verifyUser, deleteTravel);
+//delete a travel offer
+router.delete("/:id/delete", verifyUser, deleteTravel);
 
-//reserve a car post
-router.put("/:id/carReservation",verifyUser, reserveTravel);
+//reserve or cancel a travel offer
+router.put("/:id/reserve",verifyUser, reserveTravel);
 
-//get a car post
-router.get("/:id", getTravel);
+//get a travel offer
+router.get("/:id/get", getTravel);
 
-//get all car posts
-router.get("/posts/:id", getallTravel);
+//get all travel offers
+router.get("/:id/getAll", getallTravel);
 
 
 export default router;
