@@ -6,8 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
-import carpostRoute from "./routes/carposts.js";
-import housepostRoute from "./routes/houseposts.js";
+import travelRoute from "./routes/travel.js";
+import accRoute from "./routes/acc.js";
 import cookieParser from "cookie-parser";
 dotenv.config();
 
@@ -23,8 +23,8 @@ app.use(morgan("common"));
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
-app.use("/api/carposts", carpostRoute);
-app.use("/api/houseposts", housepostRoute);
+app.use("/api/travel", travelRoute);
+app.use("/api/acc", accRoute);
 
 app.use((err,req,res,next)=>{
   const errorStatus=err.status||500

@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
-const CarPostSchema = new mongoose.Schema(
+const AccSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
       required: true,
+      default:""
     },
 
     price: {
@@ -17,27 +18,17 @@ const CarPostSchema = new mongoose.Schema(
       required: true,
     },
 
-    departureDate: {
+    bookingdate: {
       type: Date,
       required: true,
     },
 
-    departureCity: {
-      type: String,
+    leavingdate: {
+      type: Date,
       required: true,
     },
 
-    departureTime: {
-      type: String,
-      required: true,
-    },
-
-    arrivalCity: {
-      type: String,
-      required: true,
-    },
-
-    arrivalTime: {
+    city: {
       type: String,
       required: true,
     },
@@ -57,21 +48,13 @@ const CarPostSchema = new mongoose.Schema(
       type: Number,
       min:0,
       max:5
-    },
+    }, 
 
-    departureLat:{
+    lat:{
       type:Number
     },
 
-    departureLong:{
-      type:Number
-    },
-
-    arrivalLat:{
-      type:Number
-    },
-
-    arrivalLong:{
+    long:{
       type:Number
     },
 
@@ -84,4 +67,4 @@ const CarPostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("CarPost", CarPostSchema);
+export default mongoose.model("Acc", AccSchema);

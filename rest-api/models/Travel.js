@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 
-const HousePostSchema = new mongoose.Schema(
+const TravelSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
       required: true,
-      default:""
     },
 
     price: {
@@ -18,17 +17,27 @@ const HousePostSchema = new mongoose.Schema(
       required: true,
     },
 
-    bookingdate: {
+    departureDate: {
       type: Date,
       required: true,
     },
 
-    leavingdate: {
-      type: Date,
+    departureCity: {
+      type: String,
       required: true,
     },
 
-    city: {
+    departureTime: {
+      type: String,
+      required: true,
+    },
+
+    arrivalCity: {
+      type: String,
+      required: true,
+    },
+
+    arrivalTime: {
       type: String,
       required: true,
     },
@@ -48,13 +57,21 @@ const HousePostSchema = new mongoose.Schema(
       type: Number,
       min:0,
       max:5
-    }, 
+    },
 
-    lat:{
+    departureLat:{
       type:Number
     },
 
-    long:{
+    departureLong:{
+      type:Number
+    },
+
+    arrivalLat:{
+      type:Number
+    },
+
+    arrivalLong:{
       type:Number
     },
 
@@ -67,4 +84,4 @@ const HousePostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("HousePost", HousePostSchema);
+export default mongoose.model("Travel", TravelSchema);

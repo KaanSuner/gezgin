@@ -1,5 +1,5 @@
 import "./ShareAcc.css";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../../components/navbar/Navbar";
 
 import  { useState, useEffect } from "react";
 export default function ShareAcc() {

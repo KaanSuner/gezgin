@@ -1,5 +1,5 @@
-import Navbar from "../../../../components/navbar/Navbar";
-import "./welcomeCar.css";
+import Navbar from "../../../components/navbar/Navbar";
+import "./travel.css";
 import React from "react";
 import { DateRange } from "react-date-range";
 import  { useState, useEffect } from "react";

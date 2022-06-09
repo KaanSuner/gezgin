@@ -1,6 +1,6 @@
-import Navbar from "../../../../components/navbar/Navbar";
-import Footer from "../../../../components/footer/footer";
-import "./welcomeHouse.css";
+import Navbar from "../../../components/navbar/Navbar";
+import Footer from "../../../components/footer/footer";
+import "./acc.css";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
