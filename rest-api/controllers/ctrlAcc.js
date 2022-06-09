@@ -1,4 +1,6 @@
 import Acc from "../models/Acc.js";
+import User from "../models/User.js"
+
 
 export const createAcc = async (req, res, next) => {
   const newAcc = new Acc(req.body);
@@ -12,7 +14,7 @@ export const createAcc = async (req, res, next) => {
 
 export const updateAcc = async (req, res, next) => {
   try {
-    const acc = await Acc.findById(req.params.id);
+    const acc = await Acc.findById(req.params.offerId);
     if (acc.userId === req.body.userId) {
       await acc.updateOne({ $set: req.body });
       res.status(200).json("The accomodation offer has been updated");
@@ -26,7 +28,7 @@ export const updateAcc = async (req, res, next) => {
 
 export const deleteAcc = async (req, res, next) => {
   try {
-    const acc = await Acc.findById(req.params.id);
+    const acc = await Acc.findById(req.params.offerId);
     if (acc.userId === req.body.userId) {
       await acc.deleteOne();
       res.status(200).json("The accomodation offer has been deleted ");
@@ -40,7 +42,7 @@ export const deleteAcc = async (req, res, next) => {
 
 export const getAcc = async (req, res, next) => {
   try {
-    const acc = await Acc.findById(req.params.id);
+    const acc = await Acc.findById(req.params.offerId);
     res.status(200).json(acc);
   } catch (err) {
     next(err);
@@ -49,7 +51,7 @@ export const getAcc = async (req, res, next) => {
 
 export const reserveAcc = async (req, res, next) => {
   try {
-    const acc = await Acc.findById(req.params.id);
+    const acc = await Acc.findById(req.params.offerId);
     if (acc.userId !== req.body.userId) {
       if (!acc.bookers.includes(req.body.userId)) {
         await acc.updateOne({ $push: { bookers: req.body.userId } });

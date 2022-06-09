@@ -13,21 +13,21 @@ import {
 const router = express.Router();
 
 //creat a accomodation offer
-router.post("/:id/create", verifyUser, createAcc);
+router.post("/create", verifyUser, createAcc);
 
 //update a accomodation offer
-router.put("/:id/update",verifyUser,  updateAcc);
+router.put("/update/:offerId",verifyUser,  updateAcc);
 
 //delete aaccomodation offer
-router.delete("/:id/delete",verifyUser,  deleteAcc);
+router.delete("/delete/:offerId",verifyUser,  deleteAcc);
 
 //reserve or cancel a accomodation offer 
-router.put("/:id/reserve",verifyUser,  reserveAcc);
+router.put("/reserve/offerId",verifyUser,  reserveAcc);
 
 //get a accommodation offer
-router.get("/:id/get", getAcc);
+router.get("/get/:offerId", getAcc);
 
 //get all accomodation offers
-router.get("/:id/getAll", getallAcc);
+router.get("/getAll", getallAcc);
 
 export default router;
