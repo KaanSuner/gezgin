@@ -1,4 +1,6 @@
 import Travel from "../models/Travel.js";
+import User from "../models/User.js"
+
 
 export const createTravel = async (req, res, next) => {
   const newTravel = new Travel(req.body);
@@ -12,7 +14,7 @@ export const createTravel = async (req, res, next) => {
 
 export const updateTravel = async (req, res, next) => {
   try {
-    const travel = await Travel.findById(req.params.id);
+    const travel = await Travel.findById(req.params.offerId);
     if (travel.userId === req.body.userId) {
       await travel.updateOne({ $set: req.body });
       res.status(200).json("The travel offer has been updated");
@@ -26,7 +28,7 @@ export const updateTravel = async (req, res, next) => {
 
 export const deleteTravel = async (req, res, next) => {
   try {
-    const travel = await Travel.findById(req.params.id);
+    const travel = await Travel.findById(req.params.offerId);
     if (travel.userId === req.body.userId) {
       await travel.deleteOne();
       res.status(200).json("The car post has been deleted ");
@@ -40,7 +42,7 @@ export const deleteTravel = async (req, res, next) => {
 
 export const reserveTravel = async (req, res, next) => {
   try {
-    const travel = await Travel.findById(req.params.id);
+    const travel = await Travel.findById(req.params.offerId);
     if (travel.userId !== req.body.userId) {
       if (!travel.bookers.includes(req.body.userId)) {
         await travel.updateOne({ $push: { bookers: req.body.userId } });
@@ -57,10 +59,9 @@ export const reserveTravel = async (req, res, next) => {
   }
 };
 
-
 export const getTravel = async (req, res, next) => {
   try {
-    const travel = await Travel.findById(req.params.id);
+    const travel = await Travel.findById(req.params.offerId);
     res.status(200).json(travel);
   } catch (err) {
     next(err);
@@ -71,7 +72,7 @@ export const getallTravel = async (req, res, next) => {
   try {
     const currentUser = await User.findById(req.body.userId);
     const userTravels = await Travel.find({
-      userId: { $ne: currentUser._id },
+      userId: { $ne: currentUser._id }
     });
     res.status(200).json(userTravels);
   } catch (err) {

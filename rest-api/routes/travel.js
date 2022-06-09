@@ -1,6 +1,5 @@
 import express from "express";
 import {verifyUser } from "../utils/verifyToken.js";
-
 import {
   createTravel,
   updateTravel,
@@ -13,22 +12,22 @@ import {
 const router = express.Router();
 
 //create a travel offer
-router.post("/:id/create", verifyUser, createTravel);
+router.post("/create", verifyUser, createTravel);
 
 //update a travel offer
-router.put("/:id/update", verifyUser, updateTravel);
+router.put("/update/:offerId", verifyUser, updateTravel);
 
 //delete a travel offer
-router.delete("/:id/delete", verifyUser, deleteTravel);
+router.delete("/delete/:offerId", verifyUser, deleteTravel);
 
 //reserve or cancel a travel offer
-router.put("/:id/reserve",verifyUser, reserveTravel);
+router.put("/reserve/:offerId",verifyUser, reserveTravel);
 
 //get a travel offer
-router.get("/:id/get", getTravel);
+router.get("/get/:offerId", getTravel);
 
 //get all travel offers
-router.get("/:id/getAll", getallTravel);
+router.get("/getAll", getallTravel);
 
 
 export default router;
