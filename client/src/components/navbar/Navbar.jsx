@@ -15,11 +15,12 @@ const Navbar = ({ type }) => {
   return (
     <div className="navbar">
       <div className="navContainer">
-
-        <span className="gezginlogo" onClick={handleClick1}>Gezgin</span>
+        <span className="gezginlogo" onClick={handleClick1}>
+          Gezgin
+        </span>
 
         <div className="navItems">
-          {type !== "travel" && (
+          {type !== "travel" && type !== "travelOrAcc" && (
             <>
               <button className="navButton" onClick={handleClick2}>
                 Seyahat Ara
@@ -27,7 +28,7 @@ const Navbar = ({ type }) => {
             </>
           )}
 
-          {type !== "accomodation" && (
+          {type !== "accomodation" && type !== "travelOrAcc" && (
             <>
               <button className="navButton" onClick={handleClick3}>
                 Konaklama Ara
@@ -42,7 +43,6 @@ const Navbar = ({ type }) => {
               </button>
             </>
           )}
-
         </div>
       </div>
     </div>

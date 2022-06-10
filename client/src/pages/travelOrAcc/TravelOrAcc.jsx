@@ -11,7 +11,7 @@ import car from "./car.png";
 export default function Login() {
   return (
     <>
-    <Navbar/>
+    <Navbar type="travelOrAcc"/>
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
