@@ -1,5 +1,5 @@
 import "./UpdateProfile.css";
-import Navbar from "../../../components/navbar/Navbar";
+import Navbar from "../../../components/navbar/navbar.jsx";
 import avatar from "./avatar.jpg";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function UpdateProfile(){
     return(
         <>
-        <Navbar/>
+        <Navbar type="updateProfile"/>
         <div className="updateProfile">
             <form action="" method="post">
                 <img src={avatar} alt="" />

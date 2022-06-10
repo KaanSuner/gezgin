@@ -1,5 +1,5 @@
 import "./MyTravels.css";
-import Navbar from "../../../components/navbar/Navbar";
+import Navbar from "../../../components/navbar/navbar.jsx";
 import avatar from "./avatar.jpg";
 import { useState, useEffect } from "react";
 export default function MyTravels() {

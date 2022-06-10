@@ -11,7 +11,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   
-  const history = useNavigate();
+  const navigate = useNavigate();
   const email = useRef();
   const password = useRef();
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
@@ -24,7 +24,7 @@ export default function Login() {
     );
   };
 
-  const handleClick2 = () => history("/register");
+  const handleClick2 = () => navigate("/register");
 
   console.log(user);
   return (

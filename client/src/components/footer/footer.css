@@ -33,10 +33,12 @@ body{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+	
 }
 .containerFooter{
-	max-width: 1170px;
+	max-width: 1024px;
 	margin:auto;
+	max-width: 1024px;
 }
 .rowFooter{
 	display: flex;
@@ -48,6 +50,7 @@ body{
 .footer{
 	background-color:#EDEDED ;
     padding: 70px 0;
+	margin-top: 2%;
 }
 .footer-col{
    width: 25%;

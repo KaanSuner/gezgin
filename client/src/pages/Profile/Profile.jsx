@@ -1,6 +1,6 @@
 import avatar from "./avatar.jpg";
 import "./Profile.css";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from "../../components/footer/footer";
 import React from "react";
 import { Link } from "react-router-dom"
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 export default function Profile(){
     return(
         <>
-        <Navbar/>
+        <Navbar type="profile"/>
         <div className="container">
             <div className="row">
                 <div className="col-4">

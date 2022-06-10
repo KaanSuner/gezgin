@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Travel from "./pages/home/travel/travel.jsx";
 import Accomodation from "./pages/home/accommodation/acc.jsx";
 import Login from "./pages/login/Login.jsx";
@@ -8,11 +8,11 @@ import UpdateProfile from "./pages/profile/UpdateProfile/UpdateProfile.jsx";
 import TravelOrAcc from "./pages/travelOrAcc/TravelOrAcc.jsx";
 import { AuthContext } from "./context/AuthContext.js";
 import { useContext } from "react";
-import Forgot from "./pages/login/ForgotPassword/ForgotPassword.jsx"
-import ShareAcc from "./pages/profile/ShareAcc/ShareAcc.jsx"
-import ShareTravel from "./pages/profile/ShareTravel/ShareTravel.jsx"
-import SelectTravel from "./pages/home/travel/SelectTravel/SelectTravel.jsx"
-import MyTravels from "./pages/profile/MyTravels/MyTravels.jsx"
+import Forgot from "./pages/login/ForgotPassword/ForgotPassword.jsx";
+import ShareAcc from "./pages/profile/ShareAcc/ShareAcc.jsx";
+import ShareTravel from "./pages/profile/ShareTravel/ShareTravel.jsx";
+import SelectTravel from "./pages/home/travel/SelectTravel/SelectTravel.jsx";
+import MyTravels from "./pages/profile/MyTravels/MyTravels.jsx";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -36,5 +36,27 @@ function App() {
   </BrowserRouter>
   );
 }
+
+/* function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<TravelOrAcc />}></Route>
+        <Route path="/accomodation" element={<Accomodation />}></Route>
+        <Route path="/travel" element={<Travel />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/Profile" element={<Profile />}></Route>
+        <Route path="/Register" element={<Register />}></Route>
+        <Route path="/UpdateProfile" element={<UpdateProfile />}></Route>
+        <Route path="login/forgotPassword" element={<Forgot />}></Route>
+        <Route path="/forgotPassword" element={<Forgot />}></Route>
+        <Route path="/shareAcc" element={<ShareAcc />}></Route>
+        <Route path="/shareTravel" element={<ShareTravel />}></Route>
+        <Route path="/SelectTravel" element={<SelectTravel />}></Route>
+        <Route path="/MyTravel" element={<MyTravels />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
+} */
 
 export default App;

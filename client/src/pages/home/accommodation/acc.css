@@ -2,61 +2,19 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  
 }
 
 .listWrapper {
   width: 100%;
-  max-width: 1364px;
+  max-width: 1024px;
   display: flex;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
-.listSearch {
-  flex: 1;
-  background-color:#febb02;
-  padding: 10px;
-  border-radius: 10px;
-  position: sticky;
-  height: 30em;
+.listResult {
+  flex: 3;
 }
-.listResult{
-    flex:3;
-}
-
-.lsTitle{
-    font-size: 40px;
-    color:#555;
-    margin-bottom: 10px;
-}
-
-.lsItem{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
-}
-
-.lsItem>span{
-    height: 30px;
-    padding: 5px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.imageWelcomeH{
-  width: 90px;
-  height: 90px;
-}
-a{
-  display: block;
-  text-decoration: none;
-  color: black;
-  margin: 1em 0.3em ;
-}
-a:hover{
-  color:#6ECF14 ;
-}
-
 
 
