@@ -8,6 +8,7 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
+import Index from "../../components/index"
 
 export default function Login() {
   
@@ -29,6 +30,7 @@ export default function Login() {
   console.log(user);
   return (
     <>
+    <Index/>
       <div className="login">
         <div className="loginWrapper">
           <div className="loginLeft">

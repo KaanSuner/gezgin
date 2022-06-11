@@ -15,12 +15,12 @@ export default function Profile(){
                     <br /><br />
                     <img src={avatar} className="image" alt="" />
                     <br /><br /><br />
-                    <div class="butons btn-group-vertical">
+                    <div className="butons btn-group-vertical">
                         <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
                         <li className="btn"><Link  to={"../shareAcc"}>Yolculuk Paylaş</Link></li>
                         <li className="btn"><Link  to={"../ShareTravel"}>Konaklama Paylaş</Link></li>
                         <li className="btn"><Link  to={"../MyTravel"}>Yolculuklarım</Link></li>
-                        <a href="#" class="btn">Konaklamalarım</a>
+                        <a href="#" className="btn">Konaklamalarım</a>
                         
                     </div>
                 </div>

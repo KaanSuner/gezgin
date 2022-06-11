@@ -22,10 +22,10 @@ const login = () => {
           </div>
           <div className="mb-3 form-check">
             {/* <input type="checkbox" className="form-check-input" id="exampleCheck1"> */}
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label className="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
           <a href="../Hotel.jsx">
-            <button type="submit" class="btn btn-primary mb-3">Giriş Yap</button>
+            <button type="submit" className="btn btn-primary mb-3">Giriş Yap</button>
           </a>
           {/* tıklanabilir link yap  */}
           <h5>Hesabın yok mu ? Hemen üye ol </h5>

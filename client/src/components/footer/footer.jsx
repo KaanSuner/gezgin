@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const footer = () => {
   return (
     <footer className="footer">
-        <div class="containerFooter">
-        <div class="rowFooter">
-          <div class="footer-col">
+        <div className="containerFooter">
+        <div className="rowFooter">
+          <div className="footer-col">
             <h4>Şirket</h4>
             <ul className="footerUl">
               <li><a href="../register">Hakkımızda</a></li>
@@ -15,7 +15,7 @@ const footer = () => {
               <li><a href="#">Gizlilik</a></li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>Yardım</h4>
             <ul className="footerUl">
               <li><a href="#">Sık Sorulan Sorular</a></li>
@@ -25,7 +25,7 @@ const footer = () => {
               <li><a href="#">payment options</a></li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>lorem</h4>
             <ul className="footerUl">
               <li><a href="#">Lorem</a></li>
@@ -34,9 +34,9 @@ const footer = () => {
               <li><a href="#">sit</a></li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>Bizi Takip Edin</h4>
-            <div class="social-links">
+            <div className="social-links">
             <Link to={"../"}>
                 <button className="Seyahat">
                   <ion-icon name="logo-facebook"></ion-icon>

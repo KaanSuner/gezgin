@@ -27,7 +27,7 @@ export default function MyTravels() {
             <div className="col-3">
             <div className="card-body">
                 <p className="card-text">
-                    <span><strong>Antalya </strong> <i class="fa fa-solid fa-arrow-right"></i><strong> İstanbul </strong></span><br/>
+                    <span><strong>Antalya </strong> <i className="fa fa-solid fa-arrow-right"></i><strong> İstanbul </strong></span><br/>
                 </p>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export default function MyTravels() {
             <div className="col-3">
             <div className="card-body">
                 <p className="card-text">
-                    <span><strong>Antalya </strong> <i class="fa fa-solid fa-arrow-right"></i><strong> İstanbul </strong></span><br/>
+                    <span><strong>Antalya </strong> <i className="fa fa-solid fa-arrow-right"></i><strong> İstanbul </strong></span><br/>
                 </p>
                 </div>
             </div>
