@@ -13,6 +13,7 @@ import ShareAcc from "./pages/profile/ShareAcc/ShareAcc.jsx";
 import ShareTravel from "./pages/profile/ShareTravel/ShareTravel.jsx";
 import SelectTravel from "./pages/home/travel/SelectTravel/SelectTravel.jsx";
 import MyTravels from "./pages/profile/MyTravels/MyTravels.jsx";
+import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
 
 function App() {
   const { user } = useContext(AuthContext);

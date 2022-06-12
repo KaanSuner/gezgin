@@ -8,7 +8,6 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
-import Index from "../../components/index"
 
 export default function Login() {
   
@@ -30,7 +29,6 @@ export default function Login() {
   console.log(user);
   return (
     <>
-    <Index/>
       <div className="login">
         <div className="loginWrapper">
           <div className="loginLeft">
@@ -42,24 +40,25 @@ export default function Login() {
             </span>
           </div>
           <div className="loginRight">
-            <form className="loginBoxLogin" onSubmit={handleClick}>
+            <form className="loginBox" onSubmit={handleClick}>
               <input
                 placeholder="Email"
                 type="email"
-                className="loginInputLogin"
+                className="loginInput"
                 ref={email}
                 required
               ></input>
               <input
                 placeholder="Parola"
                 type="password"
-                className="loginInputLogin"
+                className="loginInput"
                 ref={password}
                 required
                 minLength="6"
               ></input>
+
               <button
-                className="loginButtonB"
+                className="loginButton"
                 type="submit"
                 disabled={isFetching}
               >
@@ -67,10 +66,10 @@ export default function Login() {
                   <CircularProgress color="inherit" size="20px" />
                 ) : (
                   "Giriş Yap"
-                )}
+                )}  
               </button>
 
-              <button className="loginRegisterLogin" onClick={handleClick2}>
+              <button className="loginRegisterButton" onClick={handleClick2}>
                 {isFetching ? (
                   <CircularProgress color="inherit" size="20px" />
                 ) : (
@@ -78,16 +77,13 @@ export default function Login() {
                 )}
               </button>
 
-              <Link to={"./forgotPassword"}>
-                <span className="loginForgot">Parolanı mı unuttun?</span>
+              <Link to={"./forgotPassword"} className="loginForgot">
+                <span >Parolanı mı unuttun?</span>
               </Link>
             </form>
           </div>
         </div>
       </div>
-      <Hero />
-      <More />
-      <Footer />
     </>
   );
 }

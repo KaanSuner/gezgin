@@ -79,7 +79,7 @@ const Search = () => {
                   >
                     -
                   </button>
-                  <span className="personCounterNumber">1</span>
+                  <span className="personCounterNumber">{personNumber.adult}</span>
                   <button
                     className="personCounterButton"
                     onClick={() => handleNumber("adult", "i")}

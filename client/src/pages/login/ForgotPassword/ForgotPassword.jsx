@@ -1,15 +1,31 @@
 import "./ForgotPassword.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Userfront from "@userfront/core";
 
-export default function ForgotPassword(){
-    return(
-        <div className="genel">
-            <div className="card forgotCard mx-auto ">
-                <h3>E-mail adresini giriniz</h3>
-                <input type="email" className="forgotInput" placeholder="E-mail"/><br/>
-                <button className="btn btn-success forgot-btn">Şifreyi sıfırla</button>
-                <Link to={"../"}>Geri Dön</Link>
-            </div>
+export default function ForgotPassword() {
+  const navigate = useNavigate();
+  
+  const handleClick=()=>{
+  }
+  const handleClick2 = () => navigate("/login");
+
+
+
+  return (
+    <div className="forgotPassword">
+      <div className="forgotPasswordWrapper">
+        <div className="forgotPasswordBox">
+          <h5 className="string">
+            Şifre sıfırlama için E-mail adresinizi giriniz
+          </h5>
+          <input type="email" className="forgotInput" placeholder="E-mail" />
+          <br />
+          <button className="forgotButton" onClick={handleClick}>Şifreyi sıfırla</button>
+          <h6 className="turnToLogin" onClick={handleClick2}>
+            Geri Dön
+          </h6>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

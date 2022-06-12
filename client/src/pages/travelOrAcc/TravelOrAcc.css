@@ -1,48 +1,70 @@
-.login {
-  
+.TravelorAcc {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  
-  .loginWrapper {
-    height: 50%;
-    max-width: 1024px;
-    align-items: center;
-    margin-top: -20%;
-  }
-  
-  .loginLeft{
-    align-items: center;
-    height: 100%;
 
-  }
-  .loginRight {
-    align-items: center;
-    height: 100%;
-  }
-  .OptionImage{
-      -webkit-border-top-right-radius: 10px;
-      -moz-border-radius-topright: 10px;
-      border-top-right-radius: 10px;
+.TravelorAccWrapper {
+  width: 1024px;
+  display: flex;
+  margin-top: -10%;
+  height: 50%;
+}
 
-      -webkit-border-top-left-radius: 10px;
-      -moz-border-radius-topleft: 10px;
-      border-top-left-radius: 10px;
-  }
-  .OptionCard{
-    width: 18rem;
-    border-radius: 10px;
-    background-color:#febb02 ;
-  }
-  .OptionCard:hover{
-      color: black;
-      width: 19rem;
-      /* background-color: rgb(167, 205, 248); */
-  }
-  .option-text{
-      text-align: center;
-  }
-  .option-text:hover{
-      color: black;
-  }
-  a:hover{
-      color: black;
-  }
+.AccCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.TravelCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.OptionImage {
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  border-top-right-radius: 10px;
+
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  padding: 3px;
+}
+
+.OptionCard {
+  width: 80%;
+  background-color: #42a72b;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: #42a72b;
+  -webkit-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  align-self: center;
+
+}
+
+.OptionCard:hover {
+ background-color: #febb02;
+ border-color: #febb02;
+ color: black;
+}
+
+.OptionCardText{
+  text-align: center;
+}

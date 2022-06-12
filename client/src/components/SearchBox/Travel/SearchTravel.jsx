@@ -1,15 +1,12 @@
 import "./SearchTravel.css";
 import { useState } from "react";
-import { format } from "date-fns";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css";
 import * as rdrLocales from "react-date-range/dist/locale";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 // const Search = () => {
 const Search = () => {
-  const [openDate, setOpenDate] = useState(false);
+  /* const [openDate, setOpenDate] = useState(false); */
   const [date, setDate] = useState(new Date());
 
   const [openPersonNumber, setOpenPersonNumber] = useState(false);
@@ -71,7 +68,7 @@ const Search = () => {
                   >
                     -
                   </button>
-                  <span className="personCounterNumber">1</span>
+                  <span className="personCounterNumber">{personNumber.adult}</span>
                   <button
                     className="personCounterButton"
                     onClick={() => handleNumber("adult", "i")}

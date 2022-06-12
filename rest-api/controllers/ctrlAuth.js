@@ -17,7 +17,6 @@ export const register = async (req, res, next) => {
       password: hashedPassword,
       gender: req.body.gender,
       phone: req.body.phone,
-      pic: req.body.pic,
     });
 
     //save user and respond
@@ -49,3 +48,4 @@ export const login = async (req, res, next) => {
     next(err);
   }
 };
+

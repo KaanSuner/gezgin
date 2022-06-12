@@ -1,9 +1,18 @@
 import Travel from "../models/Travel.js";
 import User from "../models/User.js"
 
-
 export const createTravel = async (req, res, next) => {
-  const newTravel = new Travel(req.body);
+  const newTravel = new Travel({
+      userId: req.body.userId,
+      departureCity: req.body.departureCity,
+      arrivalCity: req.body.arrivalCity,
+      price: req.body.price,
+      departureTime: req.body.departureTime,
+      arrivalTime: req.body.arrivalTime,
+      description: req.body.description,
+      departureDate:req.body.departureDate,
+      maxperson:req.body.maxperson   
+  });
   try {
     const savedTravel = await newTravel.save();
     res.status(200).json(savedTravel);

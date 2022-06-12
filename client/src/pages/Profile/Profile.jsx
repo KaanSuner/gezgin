@@ -17,8 +17,8 @@ export default function Profile(){
                     <br /><br /><br />
                     <div className="butons btn-group-vertical">
                         <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
-                        <li className="btn"><Link  to={"../shareAcc"}>Yolculuk Paylaş</Link></li>
-                        <li className="btn"><Link  to={"../ShareTravel"}>Konaklama Paylaş</Link></li>
+                        <li className="btn"><Link  to={"../shareAcc"}>Konaklama Paylaş</Link></li>
+                        <li className="btn"><Link  to={"../ShareTravel"}>Yolculuk Paylaş</Link></li>
                         <li className="btn"><Link  to={"../MyTravel"}>Yolculuklarım</Link></li>
                         <a href="#" className="btn">Konaklamalarım</a>
                         

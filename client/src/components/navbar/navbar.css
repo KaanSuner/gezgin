@@ -33,9 +33,12 @@
   cursor: pointer;
   background-color: #febb02;
   margin-left: 20px;
+  -webkit-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
+  box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
 }
 
-.logOut{
+.logOut {
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;

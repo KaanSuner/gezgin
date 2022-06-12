@@ -43,13 +43,12 @@ const TravelSchema = new mongoose.Schema(
     },
 
     maxperson: {
-      type: String,
+      type:String,
       required: true,
     },
 
     bookers: {
       type: Array,
-      required: true,
       default: [],
     },
 
@@ -77,7 +76,6 @@ const TravelSchema = new mongoose.Schema(
 
     isAvailable: {
       type: Boolean,
-      required: true,
       default: true,
     },
   },
