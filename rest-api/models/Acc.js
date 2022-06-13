@@ -40,7 +40,6 @@ const AccSchema = new mongoose.Schema(
 
     bookers: {
       type: Array,
-      required: true,
       default: [],
     },
 
@@ -60,7 +59,6 @@ const AccSchema = new mongoose.Schema(
 
     isAvailable: {
       type: Boolean,
-      required: true,
       default: true,
     },
   },

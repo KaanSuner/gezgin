@@ -3,7 +3,15 @@ import User from "../models/User.js"
 
 
 export const createAcc = async (req, res, next) => {
-  const newAcc = new Acc(req.body);
+  const newAcc = new Acc({
+    userId: req.body.userId,
+    price: req.body.price,
+    description: req.body.description,
+    bookingdate: req.body.bookingdate,
+    leavingdate: req.body.leavingdate,
+    city: req.body.city,
+    maxperson:req.body.maxperson 
+  });
   try {
     const savedAcc = await newAcc.save();
     res.status(200).json(savedAcc);

@@ -7,7 +7,6 @@ import "react-date-range/dist/theme/default.css";
 import * as rdrLocales from "react-date-range/dist/locale";
 
 const Search = () => {
-  const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -38,16 +37,15 @@ const Search = () => {
 
         <div className="listItem">
           <label>Nerede arıyorsun?</label>
-          <input type="text" />
+          <input placeholder="İstanbul" type="text" />
         </div>
 
         <div className="listItem">
           <label>Hangi tarihlerde konaklayacaksın?</label>
-          <span onClick={() => setOpenDate(!openDate)}>{`${format(
+          <span>{`${format(
             date[0].startDate,
             "dd/MM/yyyy"
           )} -> ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
-          {openDate && (
             <DateRange
               locale={rdrLocales.tr}
               editableDateInputs={true}
@@ -56,9 +54,9 @@ const Search = () => {
               moveRangeOnFirstSelection={false}
               ranges={date}
               className="date"
-              rangeColors={["#febb02"]}
+              rangeColors={["#42a72b"]}
             />
-          )}
+          
         </div>
 
         <div className="listItem">

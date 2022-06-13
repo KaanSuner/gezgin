@@ -1,27 +1,169 @@
-.tarih{
-    width: 30rem;
-    margin: 1rem;
+.shareAcc {
+  display: flex;
+  justify-content: center;
 }
-.shareAcc{
-    margin: 5rem;
-    padding-right: 3rem;
-    padding-left: 4rem;
+
+.shareAccContainer {
+  max-width: 1024px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-color: #febb02;
+  background-color: #42b72a;
+  margin-top: 50px;
+  border-radius: 25px;
+  gap: 10px;
 }
-h5{
-    margin: 1rem;
+
+.shareAccContainerItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  justify-content: start;
 }
-.count{
-    margin: 1rem;
+
+.shareAccRangeDate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
 }
-.inputShare{
-    margin-left: 1rem;
-    border: 1px solid #ccc;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px 20px;
+
+.accDateLabel {
+  color: white;
+  font-weight: bold;
+  font-size: 120%;
 }
-.butonShare{
-    width: 20%;
+
+.shareAccDate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.shareAccRangeDatePicker {
+  border-radius: 15px;
+  align-items: center;
+  border-style: solid;
+  border-color: #febb02;
+  background-color: white;
+  color: black;
+  -webkit-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 50%;
+  padding: 1%;
+}
+
+.accDateRangePicker {
+  border-radius: 14px;
+  border-style: solid;
+  overflow: hidden;
+  border-color: #febb02;
+  position: absolute;
+  top: 24%;
+}
+
+.shareAccPersonNumber {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
+}
+.shareAccPersonNumberOptionItem {
+  -webkit-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-color: #febb02;
+  border-width: 3px;
+  color: black;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+}
+
+.shareAccPersonCounterButton {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #febb02;
+  height: 100%;
+  width: 25px;
+  background-color: white;
+}
+
+.shareAccPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-self: stretch;
+}
+
+.shareAccLocation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.shareAccInputShare {
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #febb02;
+  border-width: 3px;
+  background-color: white;
+  width: 100%;
+  height: 50%;
+  padding: 1%;
+  -webkit-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+}
+
+.shareAccInputTextArea {
+  resize: none;
+  border-style: solid;
+  border-color: #febb02;
+  border-width: 3px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1%;
+  margin-top: 8%;
+  width: 100%;
+  height: 204%;
+  -webkit-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+}
+
+.shareAccButton {
+  border-style: solid;
+  border-color: #febb02;
+  border-width: 3px;
+  color: gray;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2%;
+  height: 60px;
+  margin-top: 37%;
+  -webkit-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 13px 10px -8px rgba(0, 0, 0, 0.75);
+}
+
+.shareAccButton:hover {
+  background-color: #febb02;
 }

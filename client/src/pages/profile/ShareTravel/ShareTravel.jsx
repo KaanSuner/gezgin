@@ -168,7 +168,7 @@ export default function ShareAcc() {
                 ref={description}
               ></textarea>
             </div>
-            <button className="shareTravelTeklifiYayınla " type="submit">
+            <button className="shareTravelButton" type="submit">
               Teklifi Yayınla
             </button>
           </div>
