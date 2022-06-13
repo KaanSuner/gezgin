@@ -2,10 +2,12 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Logout } from "../../context/AuthActions";
 
 const Navbar = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const { dispatch} = useContext(AuthContext);
 
   const handleClick1 = () => navigate("/");
   const handleClick2 = () => navigate("/travel");
@@ -25,6 +27,7 @@ const Navbar = ({ type }) => {
               <button className="navButton" onClick={handleClick2}>
                 Seyahat Ara
               </button>
+
             </>
           )}
 
@@ -43,7 +46,11 @@ const Navbar = ({ type }) => {
               </button>
             </>
           )}
+          <button className="LogOut" onClick={()=>dispatch(Logout())}>
+                Çıkış yap
+              </button>
         </div>
+        
       </div>
     </div>
   );

@@ -1,27 +1,32 @@
 import "./login.css";
-import Hero from "../../components/Hero/Hero";
-import More from "../../components/more/more";
-import Footer from "../../components/footer/footer";
 import React from "react";
 import { useRef, useContext } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Login() {
-  
+  const [credentials, setCridentials] = useState({
+    email: undefined,
+    password: undefined,
+  });
+
   const navigate = useNavigate();
+
   const email = useRef();
   const password = useRef();
+
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
+
+  const handleChange = (e) => {
+    setCridentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
-    loginCall(
-      { email: email.current.value, password: password.current.value },
-      dispatch
-    );
+    loginCall(credentials, dispatch);
   };
 
   const handleClick2 = () => navigate("/register");
@@ -47,6 +52,8 @@ export default function Login() {
                 className="loginInput"
                 ref={email}
                 required
+                id="email"
+                onChange={handleChange}
               ></input>
               <input
                 placeholder="Parola"
@@ -55,6 +62,8 @@ export default function Login() {
                 ref={password}
                 required
                 minLength="6"
+                id="password"
+                onChange={handleChange}
               ></input>
 
               <button
@@ -66,8 +75,10 @@ export default function Login() {
                   <CircularProgress color="inherit" size="20px" />
                 ) : (
                   "Giriş Yap"
-                )}  
+                )}
               </button>
+
+              {error && <span>{error.message}</span>}
 
               <button className="loginRegisterButton" onClick={handleClick2}>
                 {isFetching ? (
@@ -78,7 +89,7 @@ export default function Login() {
               </button>
 
               <Link to={"./forgotPassword"} className="loginForgot">
-                <span >Parolanı mı unuttun?</span>
+                <span>Parolanı mı unuttun?</span>
               </Link>
             </form>
           </div>
