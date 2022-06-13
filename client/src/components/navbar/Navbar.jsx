@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Logout } from "../../context/AuthActions";
+import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 
 const Navbar = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const { dispatch} = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
 
   const handleClick1 = () => navigate("/");
   const handleClick2 = () => navigate("/travel");
@@ -27,7 +28,6 @@ const Navbar = ({ type }) => {
               <button className="navButton" onClick={handleClick2}>
                 Seyahat Ara
               </button>
-
             </>
           )}
 
@@ -39,18 +39,22 @@ const Navbar = ({ type }) => {
             </>
           )}
 
-          {type !== "profile" && (
-            <>
-              <button className="navButton" onClick={handleClick4}>
-                Hesabım
-              </button>
-            </>
-          )}
-          <button className="LogOut" onClick={()=>dispatch(Logout())}>
+          <div className="profileDropDown">
+            <ArrowDropDown className="arrowIcon" />
+            <div className="profileDropDownItems">
+              {type !== "profile" && (
+                <>
+                  <span className="myProfile" onClick={handleClick4}>
+                    Hesabım
+                  </span>
+                </>
+              )}
+              <span className="navbarLogout" onClick={() => dispatch(Logout())}>
                 Çıkış yap
-              </button>
+              </span>
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
   );

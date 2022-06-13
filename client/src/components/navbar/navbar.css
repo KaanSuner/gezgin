@@ -51,4 +51,55 @@
   -webkit-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
   box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
+  flex:1;
 }
+
+.navItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.profileDropDown{
+  flex: 1;
+  margin-left: 20px;
+  z-index: 999;
+}
+.profileDropDown .profileDropDownItems{
+  display: none;
+  background-color: #febb02;
+  border-radius: 10px;
+  padding: 6px;
+  color: black;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 3px;
+}
+.profileDropDown span {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.profileDropDown span.navbarLogout:hover {
+  background-color: #f03a3a;
+  color: white;
+  
+}
+.profileDropDown span.myProfile:hover{
+  background-color: #42b72a;
+  color: white;
+}
+
+.profileDropDown:hover .profileDropDownItems{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 21%;
+}
+
+.arrowIcon{
+  color:#febb02;
+}
+
+
+
