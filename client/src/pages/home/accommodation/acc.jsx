@@ -3,15 +3,17 @@ import Navbar from "../../../components/navbar/navbar.jsx";
 import Footer from "../../../components/footer/footer.jsx";
 import SearchResults from "../../../components/SearchResults/Accomodation/searchResultAcc.jsx";
 import { DateRange } from "react-date-range";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css";
 import * as rdrLocales from "react-date-range/dist/locale";
 import useFetch from "../../../hooks/useFetch";
+import { AuthContext } from "../../../context/AuthContext";
 
 const List = () => {
-  const [date, setDate] = useState([
+  const { user } = useContext(AuthContext);
+  const [accDate, setaccDate] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -39,10 +41,10 @@ const List = () => {
   };
 
   const { data, loading, error, reFetch } = useFetch(
-    `/acc/?City=${city}&bookingDate=${format(
-      date[0].startDate,
+    `/acc/?userId=${user._id}&City=${city}&bookingDate=${format(
+      accDate[0].startDate,
       "yyyy-MM-dd"
-    )}&leavingDate=${format(date[0].endDate, "yyyy-MM-dd")}`
+    )}&leavingDate=${format(accDate[0].endDate, "yyyy-MM-dd")}`
   );
 
   return (
@@ -71,17 +73,17 @@ const List = () => {
 
             <div className="listAccItem">
               <label>Hangi tarihlerde konaklayacaksın?</label>
-              <span>{`${format(date[0].startDate, "dd/MM/yyyy")} -> ${format(
-                date[0].endDate,
+              <span>{`${format(accDate[0].startDate, "dd/MM/yyyy")} -> ${format(
+                accDate[0].endDate,
                 "dd/MM/yyyy"
               )}`}</span>
               <DateRange
                 locale={rdrLocales.tr}
                 editableDateInputs={true}
-                onChange={(item) => setDate([item.selection])}
+                onChange={(item) => setaccDate([item.selection])}
                 minDate={new Date()}
                 moveRangeOnFirstSelection={false}
-                ranges={date}
+                ranges={accDate}
                 className="accDate"
                 rangeColors={["#42a72b"]}
               />

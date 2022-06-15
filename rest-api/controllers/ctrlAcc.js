@@ -1,5 +1,5 @@
 import Acc from "../models/Acc.js";
-import User from "../models/User.js"
+import User from "../models/User.js";
 
 export const createAcc = async (req, res, next) => {
   const newAcc = new Acc({
@@ -10,7 +10,7 @@ export const createAcc = async (req, res, next) => {
     bookingdate: req.body.bookingdate,
     leavingdate: req.body.leavingdate,
     city: req.body.city,
-    maxperson:req.body.maxperson 
+    maxperson: req.body.maxperson,
   });
   try {
     const savedAcc = await newAcc.save();
@@ -76,15 +76,24 @@ export const getAcc = async (req, res, next) => {
   }
 };
 
-
 export const getAccSearch = async (req, res, next) => {
-  const city=req.query.City
-  const bookingDate=req.query.bookingDate
-  const leavingDate=req.query.leavingDate
-  const personNumber=req.query.personNumber
+  const userId = req.query.userId;
+  const city = req.query.City;
+  const bookingDate = req.query.bookingDate;
+  const leavingDate = req.query.leavingDate;
+  const personNumber = req.query.personNumber;
 
   try {
-    const acc = await Acc.find({city:city,bookingdate:{$gte:bookingDate},leavingdate:{$lte:leavingDate}});
+    const acc = await Acc.find({
+      $and: [
+        { userId: { $ne: userId } },
+        {
+          city: city,
+          bookingdate: { $gte: bookingDate },
+          leavingdate: { $lte: leavingDate },
+        },
+      ],
+    });
     res.status(200).json(acc);
   } catch (err) {
     next(err);

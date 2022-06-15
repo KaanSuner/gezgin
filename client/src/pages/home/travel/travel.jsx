@@ -3,14 +3,16 @@ import Navbar from "../../../components/navbar/navbar.jsx";
 import Footer from "../../../components/footer/footer.jsx";
 import SearchResults from "../../../components/SearchResults/Travel/searchResultTravel.jsx";
 import useFetch from "../../../hooks/useFetch";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import * as rdrLocales from "react-date-range/dist/locale";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Travel = () => {
-  const [date, setDate] = useState(new Date());
+  const { user } = useContext(AuthContext);
+  const [travelDate, setTravelDate] = useState(new Date());
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [personNumber, setPersonNumber] = useState({
@@ -32,8 +34,7 @@ const Travel = () => {
   };
 
   const { data, loading, error, reFetch } = useFetch(
-    `/travel/?departureCity=${departure}&arrivalCity=${destination}&departureDate=${format(date, "yyyy-MM-dd")}`
-  );
+    `/travel/?userId=${user._id}&departureCity=${departure}&arrivalCity=${destination}&departureDate=${format(travelDate, "yyyy-MM-dd")}`);
 
   return (
     <div>
@@ -79,8 +80,8 @@ const Travel = () => {
               <span>
                 <DatePicker
                   className="travelDate"
-                  selected={date}
-                  onChange={(date) => setDate(date)}
+                  selected={travelDate}
+                  onChange={(date) => setTravelDate(date)}
                   locale={rdrLocales.tr}
                 />
               </span>
