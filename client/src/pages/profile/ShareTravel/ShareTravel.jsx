@@ -40,7 +40,7 @@ export default function ShareAcc() {
       username: user.username,
       name: user.name,
       surname: user.surname,
-      phone: user.body.phone,
+      phone: user.phone,
       departureCity: departureCity.current.value,
       arrivalCity: arrivalCity.current.value,
       price: price.current.value,

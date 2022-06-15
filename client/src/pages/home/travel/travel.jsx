@@ -9,6 +9,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 import { AuthContext } from "../../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Travel = () => {
   const { user } = useContext(AuthContext);
@@ -53,7 +54,9 @@ const Travel = () => {
             ) : (
               <>
                 {data.map((item) => (
-                  <SearchResults item={item} key={item._id} />
+                  <Link to={`/travel/${item._id}`}  style={{ textDecoration: 'none' ,color:"black"}}>
+                    <SearchResults item={item} key={item._id} />
+                  </Link>
                 ))}
               </>
             )}

@@ -10,8 +10,11 @@ import "react-date-range/dist/theme/default.css";
 import * as rdrLocales from "react-date-range/dist/locale";
 import useFetch from "../../../hooks/useFetch";
 import { AuthContext } from "../../../context/AuthContext";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const List = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [accDate, setaccDate] = useState([
     {
@@ -58,7 +61,12 @@ const List = () => {
             ) : (
               <>
                 {data.map((item) => (
-                  <SearchResults item={item} key={item._id} />
+                  <Link
+                    to={`/acc/${item._id}`}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <SearchResults item={item} key={item._id} />
+                  </Link>
                 ))}
               </>
             )}
@@ -68,7 +76,11 @@ const List = () => {
 
             <div className="listAccItem">
               <label>Nerede arıyorsun?</label>
-              <input placeholder="İstanbul" type="text" onChange={(e)=>setCity(e.target.value)} />
+              <input
+                placeholder="İstanbul"
+                type="text"
+                onChange={(e) => setCity(e.target.value)}
+              />
             </div>
 
             <div className="listAccItem">
@@ -122,7 +134,9 @@ const List = () => {
               )}
             </div>
             <div className="listAccItem">
-              <button className="accSearchButton" onClick={handleClick}>Ara</button>
+              <button className="accSearchButton" onClick={handleClick}>
+                Ara
+              </button>
             </div>
           </div>
         </div>
