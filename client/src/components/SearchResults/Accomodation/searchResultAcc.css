@@ -1,0 +1,47 @@
+.accResult {
+    border: 3px solid #42a72b;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .accResult:hover{
+    background-color: #febb02;
+    transform: scale(1.03);
+  }
+  
+  .accInfo1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+  }
+  
+  .accInfo2 {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+  }
+  
+  .accPrice{
+      font-weight: bold;
+      font-size: 175%;
+  }
+  
+  .accResultItemAvatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  

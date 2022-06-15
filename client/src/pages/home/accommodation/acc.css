@@ -1,11 +1,11 @@
-.listContainer {
+.listAccContainer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
   
 }
 
-.listWrapper {
+.listAccWrapper {
   width: 100%;
   max-width: 1024px;
   display: flex;
@@ -13,8 +13,132 @@
   margin-bottom: 20px;
 }
 
-.listResult {
-  flex: 3;
+.listAccResult {
+  flex: 4;
 }
+
+.listAccSearch {
+  flex: 2;
+  background-color: #febb02;
+  padding: 10px;
+  border-radius: 10px;
+  position: sticky;
+  top: 10px;
+  width: 350px;
+}
+
+.lstAccTitle {
+  font-size: 23px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.listAccItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.listAccItem > label {
+  font-size: 15px;
+}
+
+.listAccItem > input {
+  height: 40px;
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+  color: black;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 2px;
+}
+
+.listAccItem > span {
+  height: 40px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 10px;
+  color: gray;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 2px;
+}
+
+.accDate {
+  border-radius: 14px;
+  border-style: solid;
+  overflow: hidden;
+  border-color: #42b72a;
+  position: fixed;
+  position: relative;
+  border-width: 2px;
+}
+
+.accPersonNumberOptions {
+  margin-top: 4px;
+}
+
+.accPersonNumberOptionItem {
+  position: relative;
+  color: gray;
+  width: 70%;
+  background-color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 18px 26px -8px rgba(0, 0, 0, 0.64);
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 2px;
+}
+
+.accNumberCounter {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.accPersonCounterButton {
+  height: 25px;
+  width: 22px;
+  border: 1px solid #febb02;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  border-width: 2px;
+}
+
+.accPersonCounterButton:disabled {
+  cursor: not-allowed;
+}
+
+.accSearchButton {
+  background-color: #555555;
+  color: white;
+  border-radius: 10px;
+  margin-top: 2px;
+  width: 50%;
+  align-self: center;
+  font-size: 22px;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 2px;
+}
+
+.searchButton:hover {
+  background-color: #42b72a;
+}
+
 
 

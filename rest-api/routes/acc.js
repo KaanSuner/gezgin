@@ -7,7 +7,8 @@ import {
   deleteAcc,
   reserveAcc,
   getAcc,
-  getallAcc,
+  getallUserAcc,
+  getAccSearch
 } from "../controllers/ctrlAcc.js";
 
 const router = express.Router();
@@ -28,6 +29,9 @@ router.put("/reserve/offerId",verifyUser,  reserveAcc);
 router.get("/get/:offerId", getAcc);
 
 //get all accomodation offers
-router.get("/getAll", getallAcc);
+router.get("/", getAccSearch);
+
+//get all accomodation offers
+router.get("/getAll", getallUserAcc);
 
 export default router;

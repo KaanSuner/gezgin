@@ -21,18 +21,18 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={user?<TravelOrAcc />:<Login />}></Route>
-        <Route path="/accomodation" element={user?<Accomodation />:<Login />}></Route>
-        <Route path="/travel" element={user?<Travel/>:<Login />}></Route>
-        <Route path="/login" element={user? <Navigate to="/"/> :<Login />}></Route>
-        <Route path="/Profile" element={user?<Profile />:<Login />}></Route>
-        <Route path="/Register" element={user? <Navigate to="/"/> :<Register />}></Route>
-        <Route path="/UpdateProfile" element={user?<UpdateProfile />:<Login />}></Route>
-        <Route path="login/forgotPassword" element={<Forgot/>}></Route>
-        <Route path="/forgotPassword" element={<Forgot/>}></Route>
-        <Route path="/shareAcc" element={user?<ShareAcc/>:<Login/>}></Route>
-        <Route path="/shareTravel" element={user?<ShareTravel/>:<Login/>}></Route>
-        <Route path="/SelectTravel" element={<SelectTravel/>}></Route>
-        <Route path="/MyTravel" element={<MyTravels/>}></Route>
+        <Route exact path="/accomodation" element={user?<Accomodation />:<Login />}></Route>
+        <Route exact path="/travel" element={user?<Travel/>:<Login />}></Route>
+        <Route exact path="/login" element={user? <Navigate to="/"/> :<Login />}></Route>
+        <Route exact path="/Profile" element={user?<Profile />:<Login />}></Route>
+        <Route exact path="/Register" element={user? <Navigate to="/"/> :<Register />}></Route>
+        <Route exact path="/UpdateProfile" element={user?<UpdateProfile />:<Login />}></Route>
+        <Route exact path="login/forgotPassword" element={<Forgot/>}></Route>
+        <Route exact path="/forgotPassword" element={<Forgot/>}></Route>
+        <Route exact path="/shareAcc" element={user?<ShareAcc/>:<Login/>}></Route>
+        <Route exact path="/shareTravel" element={user?<ShareTravel/>:<Login/>}></Route>
+        <Route exact path="/SelectTravel" element={<SelectTravel/>}></Route>
+        <Route exact path="/MyTravel" element={<MyTravels/>}></Route>
       </Routes>
   </BrowserRouter>
   );

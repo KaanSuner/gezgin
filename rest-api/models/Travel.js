@@ -6,7 +6,10 @@ const TravelSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+    username: {
+      type: String,
+      required: true,
+    },
     price: {
       type: String,
       required: true,
@@ -43,8 +46,14 @@ const TravelSchema = new mongoose.Schema(
     },
 
     maxperson: {
-      type:String,
+      type:Number,
       required: true,
+    },
+
+    reserveSeats:{
+      type:Number,
+      required:true,
+      default:0
     },
 
     bookers: {

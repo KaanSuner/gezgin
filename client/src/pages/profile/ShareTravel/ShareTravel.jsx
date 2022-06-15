@@ -37,12 +37,14 @@ export default function ShareAcc() {
     e.preventDefault();
     const newTravel = {
       userId: user._id,
+      username: user.username,
       departureCity: departureCity.current.value,
       arrivalCity: arrivalCity.current.value,
       price: price.current.value,
       departureTime: departureTime.current.value,
       arrivalTime: arrivalTime.current.value,
       maxperson: personNumber.adult,
+      emptySeats:personNumber.adult,
       description: description.current.value,
       departureDate: date,
     };

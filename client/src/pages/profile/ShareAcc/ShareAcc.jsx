@@ -45,6 +45,7 @@ export default function ShareAcc() {
     e.preventDefault();
     const newAcc = {
       userId: user._id,
+      username: user.username,
       city: city.current.value,
       price: price.current.value,
       bookingdate: date[0].startDate,

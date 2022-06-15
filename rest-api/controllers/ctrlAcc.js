@@ -1,10 +1,10 @@
 import Acc from "../models/Acc.js";
 import User from "../models/User.js"
 
-
 export const createAcc = async (req, res, next) => {
   const newAcc = new Acc({
     userId: req.body.userId,
+    username: req.body.username,
     price: req.body.price,
     description: req.body.description,
     bookingdate: req.body.bookingdate,
@@ -48,15 +48,6 @@ export const deleteAcc = async (req, res, next) => {
   }
 };
 
-export const getAcc = async (req, res, next) => {
-  try {
-    const acc = await Acc.findById(req.params.offerId);
-    res.status(200).json(acc);
-  } catch (err) {
-    next(err);
-  }
-};
-
 export const reserveAcc = async (req, res, next) => {
   try {
     const acc = await Acc.findById(req.params.offerId);
@@ -76,7 +67,31 @@ export const reserveAcc = async (req, res, next) => {
   }
 };
 
-export const getallAcc = async (req, res, next) => {
+export const getAcc = async (req, res, next) => {
+  try {
+    const acc = await Acc.findById(req.params.offerId);
+    res.status(200).json(acc);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+export const getAccSearch = async (req, res, next) => {
+  const city=req.query.City
+  const bookingDate=req.query.bookingDate
+  const leavingDate=req.query.leavingDate
+  const personNumber=req.query.personNumber
+
+  try {
+    const acc = await Acc.find({city:city,bookingdate:{$gte:bookingDate},leavingdate:{$lte:leavingDate}});
+    res.status(200).json(acc);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getallUserAcc = async (req, res, next) => {
   try {
     const currentUser = await User.findById(req.params.userId);
     const userAcc = await Acc.find({

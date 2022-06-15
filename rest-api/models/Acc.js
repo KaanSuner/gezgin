@@ -5,7 +5,12 @@ const AccSchema = new mongoose.Schema(
     userId: {
       type: String,
       required: true,
-      default:""
+      default: "",
+    },
+
+    username: {
+      type: String,
+      required: true,
     },
 
     price: {
@@ -34,7 +39,7 @@ const AccSchema = new mongoose.Schema(
     },
 
     maxperson: {
-      type: String,
+      type: Number,
       required: true,
     },
 
@@ -45,16 +50,8 @@ const AccSchema = new mongoose.Schema(
 
     rating: {
       type: Number,
-      min:0,
-      max:5
-    }, 
-
-    lat:{
-      type:Number
-    },
-
-    long:{
-      type:Number
+      min: 0,
+      max: 5,
     },
 
     isAvailable: {

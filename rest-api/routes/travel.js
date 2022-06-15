@@ -6,7 +6,8 @@ import {
   deleteTravel,
   reserveTravel,
   getTravel,
-  getallTravel,
+  getTravelSearch,
+  getallUserTravels
 } from "../controllers/ctrlTravel.js";
 
 const router = express.Router();
@@ -26,8 +27,11 @@ router.put("/reserve/:offerId",verifyUser, reserveTravel);
 //get a travel offer
 router.get("/get/:offerId", getTravel);
 
-//get all travel offers
-router.get("/getAll", getallTravel);
+//get travel offer search results
+router.get("/", getTravelSearch);
+
+//get all user travels
+router.get("/getAllUserTravels", getallUserTravels);
 
 
 export default router;
