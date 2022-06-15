@@ -34,7 +34,13 @@ const Travel = () => {
   };
 
   const { data, loading, error, reFetch } = useFetch(
-    `/travel/?userId=${user._id}&departureCity=${departure}&arrivalCity=${destination}&departureDate=${format(travelDate, "yyyy-MM-dd")}`);
+    `/travel/?userId=${
+      user._id
+    }&departureCity=${departure}&arrivalCity=${destination}&departureDate=${format(
+      travelDate,
+      "yyyy-MM-dd"
+    )}`
+  );
 
   return (
     <div>
@@ -43,7 +49,7 @@ const Travel = () => {
         <div className="listTravelWrapper">
           <div className="listTravelResult">
             {loading ? (
-              "loading"
+              ""
             ) : (
               <>
                 {data.map((item) => (
@@ -89,8 +95,7 @@ const Travel = () => {
 
             <div className="listTravelItem">
               <label>Kişi Sayısı</label>
-              <span
-                className="travelPersonNumber">
+              <span className="travelPersonNumber">
                 <span className="travelPerson">{`${personNumber.adult}`}</span>
                 <div className="travelNumberCounter">
                   <button

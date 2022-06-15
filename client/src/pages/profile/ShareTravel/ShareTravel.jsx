@@ -38,13 +38,16 @@ export default function ShareAcc() {
     const newTravel = {
       userId: user._id,
       username: user.username,
+      name: user.name,
+      surname: user.surname,
+      phone: user.body.phone,
       departureCity: departureCity.current.value,
       arrivalCity: arrivalCity.current.value,
       price: price.current.value,
       departureTime: departureTime.current.value,
       arrivalTime: arrivalTime.current.value,
       maxperson: personNumber.adult,
-      emptySeats:personNumber.adult,
+      emptySeats: personNumber.adult,
       description: description.current.value,
       departureDate: date,
     };
@@ -61,7 +64,6 @@ export default function ShareAcc() {
       <Navbar />
       <div className="shareTravel">
         <form className="shareTravelContainer" onSubmit={handleClick}>
-
           <div className="shareTravelContainerItem ">
             <div className="shareTravelDeparture">
               <label className="travelDepartureLabel">
@@ -133,7 +135,6 @@ export default function ShareAcc() {
               ></input>
             </div>
           </div>
-
 
           <div className="shareTravelContainerItem">
             <div className="shareTravelDepartureTime">

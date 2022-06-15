@@ -61,23 +61,26 @@
 }
 .profileDropDown{
   flex: 1;
-  margin-left: 20px;
+  margin-left: 10px;
   z-index: 999;
+  position: relative;
 }
 .profileDropDown .profileDropDownItems{
   display: none;
   background-color: #febb02;
   border-radius: 10px;
-  padding: 6px;
+  padding: 3px;
   color: black;
   border-style: solid;
   border-color: #42b72a;
   border-width: 3px;
+  width: 450%; 
 }
 .profileDropDown span {
   padding: 12px;
   cursor: pointer;
   border-radius: 10px;
+  text-align: center;
 }
 
 .profileDropDown span.navbarLogout:hover {
@@ -94,7 +97,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 21%;
+  left: -170%;
 }
 
 .arrowIcon{

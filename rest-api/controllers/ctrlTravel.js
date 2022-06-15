@@ -5,6 +5,9 @@ export const createTravel = async (req, res, next) => {
   const newTravel = new Travel({
     userId: req.body.userId,
     username: req.body.username,
+    name: req.body.name,
+    surname: req.body.surname,
+    phone: req.body.phone,
     departureCity: req.body.departureCity,
     arrivalCity: req.body.arrivalCity,
     price: req.body.price,
@@ -94,7 +97,7 @@ export const getTravelSearch = async (req, res, next) => {
           arrivalCity: destination,
           departureDate: { $gte: departureDate },
         },
-      ]
+      ],
     });
     res.status(200).json(travel);
   } catch (err) {

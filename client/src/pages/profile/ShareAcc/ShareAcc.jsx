@@ -46,6 +46,9 @@ export default function ShareAcc() {
     const newAcc = {
       userId: user._id,
       username: user.username,
+      name: user.name,
+      surname: user.surname,
+      phone: user.phone,
       city: city.current.value,
       price: price.current.value,
       bookingdate: date[0].startDate,

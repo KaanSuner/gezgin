@@ -54,7 +54,7 @@ const List = () => {
         <div className="listAccWrapper">
           <div className="listAccResult">
             {loading ? (
-              "loading"
+              ""
             ) : (
               <>
                 {data.map((item) => (

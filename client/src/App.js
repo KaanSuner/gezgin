@@ -13,7 +13,8 @@ import ShareAcc from "./pages/profile/ShareAcc/ShareAcc.jsx";
 import ShareTravel from "./pages/profile/ShareTravel/ShareTravel.jsx";
 import SelectTravel from "./pages/home/travel/SelectTravel/SelectTravel.jsx";
 import MyTravels from "./pages/profile/MyTravels/MyTravels.jsx";
-import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
+import TravelDetail from "./pages/offerDetails/travel/travelDetail.jsx";
+import AccDetail from "./pages/offerDetails/accomodation/accDetail.jsx";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -33,6 +34,8 @@ function App() {
         <Route exact path="/shareTravel" element={user?<ShareTravel/>:<Login/>}></Route>
         <Route exact path="/SelectTravel" element={<SelectTravel/>}></Route>
         <Route exact path="/MyTravel" element={<MyTravels/>}></Route>
+        <Route exact path="/travel/:id" element={<TravelDetail/>}></Route>
+        <Route exact path="/accomodation/:id" element={<AccDetail/>}></Route>
       </Routes>
   </BrowserRouter>
   );
