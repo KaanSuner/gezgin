@@ -1,0 +1,32 @@
+.activate {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 300;
+  letter-spacing: 2px;
+  background: #42a72b;
+}
+
+.activate p {
+  font-size: 1.5rem;
+  color: #fbbe02;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.activate p span {
+  cursor: pointer;
+color: transparent;
+-webkit-text-stroke:white 0.2px;
+}
+
+.activate p span:hover {
+  color: #fbbe02;
+}

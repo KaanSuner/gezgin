@@ -53,7 +53,6 @@ const UserSchema = new mongoose.Schema(
 
     avatar: {
       type: String,
-      required: [true,"Avatar is required"],
       default: "",
     },
 

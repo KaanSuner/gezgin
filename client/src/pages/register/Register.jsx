@@ -7,6 +7,8 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { yellow } from "@mui/material/colors";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   const [value, setValue] = React.useState("female");
@@ -36,7 +38,15 @@ export default function Register() {
     };
     try {
       await axios.post("/auth/register", user);
-      navigate("/login");
+      toast.success("Onay linki gönderildi. Lütfen mailini kontrol et.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -54,6 +64,17 @@ export default function Register() {
           </span>
         </div>
         <div className="registerRight">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <form className="registerBox" onSubmit={handleClick}>
             <input
               placeholder="Kullanıcı Adı"
@@ -142,7 +163,10 @@ export default function Register() {
             <button className="registerButton" type="submit">
               Kayıt ol
             </button>
-            <button className="registerLoginButton" onClick={() => navigate("/login")}>
+            <button
+              className="registerLoginButton"
+              onClick={() => navigate("/login")}
+            >
               Hesabın varsa giriş yap
             </button>
           </form>

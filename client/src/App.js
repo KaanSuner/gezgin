@@ -18,6 +18,7 @@ import MyTravelRsv from "./pages/profile/MyReservations/travel/myTravelReservati
 import MyAccOffers from "./pages/profile/myOffers/accomodation/myOffersAcc.jsx";
 import MyTravelOffers from "./pages/profile/myOffers/travel/myOffersTravel.jsx";
 import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
+import Activation from "./pages/activation/activation.jsx";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -42,6 +43,7 @@ function App() {
         <Route exact path="/Profile/myAccOffers" element={user?<MyAccOffers/>:<Login/>}></Route>
         <Route exact path="/Profile/myTravelOffers" element={user?<MyTravelOffers/>:<Login/>}></Route>
         <Route exact path="/api/auth/reset-password/:token" element={<ResetPassword/>}></Route>
+        <Route exact path="/api/auth/activation/:activation_token" element={<Activation/>}></Route>
       </Routes>
   </BrowserRouter>
   );

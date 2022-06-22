@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Logout } from "../../context/AuthActions";
-import Avatar from "../avatar/avatar.jsx";
 
 const Navbar = ({ type }) => {
   const navigate = useNavigate();
