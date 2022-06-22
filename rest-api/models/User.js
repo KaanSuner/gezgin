@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: true,
+      required: [true, "Username is required"],
       unique: true,
       min: 3,
       max: 20,
@@ -12,21 +12,21 @@ const UserSchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      required: true,
+      required: [true, "Name is required"],
       min: 3,
       max: 20,
     },
 
     surname: {
       type: String,
-      required: true,
+      required:[ true, "Surname is required"],
       min: 1,
       max: 20,
     },
 
     email: {
       type: String,
-      required: true,
+      required: [true,"Email is required"],
       max: 70,
       unique: true,
       trim:true
@@ -34,13 +34,13 @@ const UserSchema = new mongoose.Schema(
 
     password: {
       type: String,
-      required: true,
+      required:  [true,"Password is required"],
       min: 6,
     },
 
     phone: {
       type: String,
-      required: true,
+      required: [true,"Phone is required"],
       min: 10,
       max: 10,
       unique: true,
@@ -48,17 +48,13 @@ const UserSchema = new mongoose.Schema(
 
     gender: {
       type: String,
-      required: true,
+      required: [true, "Gender is required"]
     },
 
-    pic: {
+    avatar: {
       type: String,
-      default: "https://res.cloudinary.com/duck2vdcy/image/upload/v1655842388/avatar/Placeholder_xqwinv.jpg",
-    },
-
-    isAdmin: {
-      type: Boolean,
-      default: false,
+      required: [true,"Avatar is required"],
+      default: "",
     },
 
     myTravelOffers: [

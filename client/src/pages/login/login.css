@@ -79,6 +79,10 @@
   border: none;
 }
 
+.loginButton:hover{
+background-color: gray;
+}
+
 .loginForgot {
   margin-top: 1em;
   text-align: center;
@@ -96,4 +100,9 @@
   cursor: pointer;
   color: black;
   border: none;
+}
+
+.loginRegisterButton:hover{
+  background-color: grey;
+  color: white;
 }

@@ -2,16 +2,17 @@ import "./travelActiveOffers.css";
 import React from "react";
 import axios from "axios";
 
-const TravelActiveOffers = ({ item,user }) => {
-
+const TravelActiveOffers = ({ item, user }) => {
   const reloadPage = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/travel/cancelMyTravelOffer/${user._id}/${item.offerId}`);
+      await axios.put(
+        `/travel/cancelMyTravelOffer/${user._id}/${item.offerId}`
+      );
       await axios.delete(`/travel/delete/${item.offerId}`);
     } catch (err) {
       console.log(err);
@@ -23,17 +24,13 @@ const TravelActiveOffers = ({ item,user }) => {
     <div className="travelActiveOffersContainer">
       <div className="travelActiveOffersActive">
         <div className="travelActiveOffersActiveInfo1">
-          <img
-            src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
-            alt=""
-            className="travelActiveOffersActiveAvatar"
-          />
-          <span className="travelActiveOffersActiveUsername">username</span>
+          <span className="travelActiveOffersDepartureDate">
+            {item.departureDate}
+          </span>
         </div>
         <div className="travelActiveOffersActiveInfo2">
-          <span className="travelActiveOffersActiveLocation">{item.city}</span>
-          <span className="travelActiveOffersActiveDates">
-            {item.bookingdate} - {item.leavingdate}
+          <span className="travelActiveOffersCities">
+            {item.departureCity} --> {item.arrivalCity}
           </span>
         </div>
         <div className="travelActiveOffersActiveInfo3">
@@ -42,7 +39,10 @@ const TravelActiveOffers = ({ item,user }) => {
         </div>
       </div>
       <div className="travelActiveOffersActiveButtons">
-        <button className="travelActiveOffersActiveCancel" onClick={handleClick}>
+        <button
+          className="travelActiveOffersActiveCancel"
+          onClick={handleClick}
+        >
           İptal et
         </button>
       </div>

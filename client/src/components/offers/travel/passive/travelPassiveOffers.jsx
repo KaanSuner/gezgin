@@ -20,16 +20,14 @@ const TravelPassiveOffers = ({item,user}) => {
     <div className="travelPassiveOffersContainer">
       <div className="travelPassiveOffers">
         <div className="travelPassiveOffersInfo1">
-          <img
-            src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
-            alt=""
-            className="travelPassiveOffersAvatar"
-          />
-          <span className="travelPassiveOffersUsername">{user.username}</span>
+        <span className="travelPassiveOffersDepartureDate">
+            {item.departureDate}
+          </span>
         </div>
         <div className="travelPassiveOffersInfo2">
-          <span className="travelPassiveOffersLocation">{item.city}</span>
-          <span className="travelPassiveOffersDates">{item.bookingdate} - {item.leavingdate}</span>
+          <span className="travelPassiveOffersCities">
+            {item.departureCity} --> {item.arrivalCity}
+          </span>
         </div>
         <div className="travelPassiveOffersInfo3">
           <span className="travelPassiveOffersPrice">{item.price}</span>

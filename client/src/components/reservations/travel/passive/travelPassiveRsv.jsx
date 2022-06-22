@@ -21,6 +21,7 @@ const TravelRsv = ({item,user}) => {
     <div className="travelPassiveRsvContainer">
       <div className="travelPassiveRsv">
         <div className="travelRsvPassiveInfo1">
+        <span className="ownerTitle"> Teklif Sahibi</span>
           <img
             src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
             alt=""
@@ -29,12 +30,13 @@ const TravelRsv = ({item,user}) => {
           <span className="travelRsvPassiveUsername">{user.username}</span>
         </div>
         <div className="travelRsvPassiveInfo2">
-          <span className="travelRsvPassiveLocation">{item.city}</span>
-          <span className="travelRsvPassiveDates">{item.bookingdate} - {item.leavingdate}</span>
+        <span className="travelRsvPassiveDepartureDate">{item.departureDate}
+          </span>
+          <span className="travelRsvPassiveCities">{item.departureCity} --> {item.arrivalCity}</span>
         </div>
         <div className="travelRsvPassiveInfo3">
           <span className="travelRsvPassivePrice">{item.price}</span>
-          <div className="travelRsvPassiveText"> Kapalı</div>
+          <div className="travelRsvPassiveText">Kapalı</div>
         </div>
       </div>
       <div className="travelRsvPassivebuttons">

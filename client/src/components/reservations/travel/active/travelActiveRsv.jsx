@@ -24,18 +24,18 @@ const TravelRsv = ({ item,user }) => {
     <div className="travelActiveRsvContainer">
       <div className="travelRsvActive">
         <div className="travelRsvActiveInfo1">
+        <span className="ownerTitle"> Teklif Sahibi</span>
           <img
             src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
             alt=""
             className="travelRsvActiveAvatar"
           />
-          <span className="travelRsvActiveUsername">username</span>
+          <span className="travelRsvActiveUsername">{item.username}</span>
         </div>
         <div className="travelRsvActiveInfo2">
-          <span className="travelRsvActiveLocation">{item.city}</span>
-          <span className="travelRsvActiveDates">
-            {item.bookingdate} - {item.leavingdate}
+          <span className="travelRsvActiveDepartureDate">{item.departureDate}
           </span>
+          <span className="travelRsvActiveCities">{item.departureCity} --> {item.arrivalCity}</span>
         </div>
         <div className="travelRsvActiveInfo3">
           <span className="travelRsvActivePrice">{item.price}</span>

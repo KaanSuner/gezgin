@@ -1,10 +1,11 @@
 import "./UpdateProfile.css";
 import Navbar from "../../../components/navbar/navbar.jsx";
-import avatar from "./avatar.jpg";
-import React from "react";
+import React, { useContext } from "react";
 import Avatar from "../../../components/avatar/avatar.jsx";
+import { AuthContext } from "../../../context/AuthContext";
 
 export default function UpdateProfile() {
+  const {user} = useContext(AuthContext);
   return (
     <>
       <Navbar type="updateProfile" />
@@ -12,17 +13,17 @@ export default function UpdateProfile() {
         <div className="updateProfileWrapper">
           <div className="updateProfileLeft">
             <h4 className="updateProfileTitle">Profilini Güncelle</h4>
-            <input type="text" className="box" placeholder="İsim" />
+            <input type="text" className="box" placeholder={user.name} />
 
-            <input type="text" className="box" placeholder="Soyisim" />
+            <input type="text" className="box" placeholder={user.surname} />
 
-            <input type="text" className="box" placeholder="Kullanıcı Adı" />
+            <input type="text" className="box" placeholder={user.username} />
 
-            <input type="email" className="box" placeholder="Email" />
+            <input type="email" className="box" placeholder={user.email}/>
 
             <input type="password" className="box" placeholder="Parola" />
 
-            <input type="text" className="box" placeholder="Telefon" />
+            <input type="text" className="box" placeholder={user.phone} />
             <input
               type="file"
               name="update_image"

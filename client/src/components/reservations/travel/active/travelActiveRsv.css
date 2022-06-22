@@ -21,6 +21,16 @@
     justify-content: center;
   }
 
+  .travelRsvActiveCancel{
+    border: none;
+  }
+
+  .ownerTitle{
+    font-size: 18px;
+    font-weight: bold;
+    color:black;
+  }
+
   .travelRsvActiveInfo1 {
     flex: 1;
     display: flex;
@@ -34,6 +44,7 @@
     flex: 3;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 5px;
     gap: 20px;
@@ -50,7 +61,7 @@
   
   .travelRsvActivePrice{
       font-weight: bold;
-      font-size: 175%;
+      font-size: 200%;
   }
   
   .travelRsvActiveAvatar {
