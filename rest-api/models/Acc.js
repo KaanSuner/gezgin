@@ -38,12 +38,12 @@ const AccSchema = new mongoose.Schema(
     },
 
     bookingdate: {
-      type: Date,
+      type: String,
       required: true,
     },
 
     leavingdate: {
-      type: Date,
+      type: String,
       required: true,
     },
 
@@ -55,6 +55,18 @@ const AccSchema = new mongoose.Schema(
     maxperson: {
       type: Number,
       required: true,
+    },
+
+    reserveSeats: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+
+    unReserveSeats: {
+      type: Number,
+      required: true,
+      default: 0,
     },
 
     bookers: {
@@ -69,6 +81,11 @@ const AccSchema = new mongoose.Schema(
     },
 
     isAvailable: {
+      type: Boolean,
+      default: true,
+    },
+    
+    isActive: {
       type: Boolean,
       default: true,
     },

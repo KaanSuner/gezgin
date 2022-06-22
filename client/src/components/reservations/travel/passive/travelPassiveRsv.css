@@ -1,0 +1,77 @@
+
+.travelPassiveRsvContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .travelPassiveRsv{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border: 3px solid #42a72b;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .travelRsvPassivebuttons{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .travelRsvPassiveInfo1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5spx;
+    gap: 5px;
+  }
+
+  .travelRsvPassiveInfo2 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 20px;
+  }
+  
+  .travelRsvPassiveInfo3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+  }
+  
+  .travelRsvPassivePrice{
+      font-weight: bold;
+      font-size: 175%;
+  }
+  
+  .travelRsvPassiveAvatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .travelRsvPassiveCancel{
+    margin: 5%;
+    border-radius: 12px;
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    background-color:white;
+    color: red;
+    border: 2px solid red;
+  }
+  
+  .travelRsvPassiveText{
+    font-weight: 600;
+    color: red;
+  }

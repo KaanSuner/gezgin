@@ -26,6 +26,13 @@
   color: #febb02;
 }
 
+.navItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .navButton {
   border: none;
   padding: 5px 10px;
@@ -47,22 +54,17 @@
   color: white;
   margin-left: 20px;
   border: none;
-
-  -webkit-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
-  box-shadow: 0px 13px 10px -8px rgba(0,0,0,0.75);
   flex:1;
 }
 
-.navItems{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 .profileDropDown{
-  flex: 1;
   margin-left: 10px;
   z-index: 999;
+  position: relative;
+  width: 300px;
+  text-align: end;
+  font-weight: bold;
+  font-size: larger;
   position: relative;
 }
 .profileDropDown .profileDropDownItems{
@@ -74,7 +76,12 @@
   border-style: solid;
   border-color: #42b72a;
   border-width: 3px;
-  width: 450%; 
+  width: 150px;
+  margin-left: 221%;
+  margin-top: 0%; 
+  position: absolute;
+  font-weight: lighter;
+  font-size: medium;
 }
 .profileDropDown span {
   padding: 12px;

@@ -3,29 +3,24 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Logout } from "../../context/AuthActions";
-import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
+import Avatar from "../avatar/avatar.jsx";
 
 const Navbar = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const { dispatch } = useContext(AuthContext);
 
-  const handleClick1 = () => navigate("/");
-  const handleClick2 = () => navigate("/travel");
-  const handleClick3 = () => navigate("/accomodation");
-  const handleClick4 = () => navigate("/Profile");
-
   return (
     <div className="navbar">
       <div className="navContainer">
-        <span className="gezginlogo" onClick={handleClick1}>
+        <span className="gezginlogo" onClick={() => navigate("/")}>
           Gezgin
         </span>
 
         <div className="navItems">
           {type !== "travel" && type !== "travelOrAcc" && (
             <>
-              <button className="navButton" onClick={handleClick2}>
+              <button className="navButton" onClick={() => navigate("/travel")}>
                 Seyahat Ara
               </button>
             </>
@@ -33,18 +28,24 @@ const Navbar = ({ type }) => {
 
           {type !== "accomodation" && type !== "travelOrAcc" && (
             <>
-              <button className="navButton" onClick={handleClick3}>
+              <button
+                className="navButton"
+                onClick={() => navigate("/accomodation")}
+              >
                 Konaklama Ara
               </button>
             </>
           )}
 
           <div className="profileDropDown">
-            <ArrowDropDown className="arrowIcon" />
+            {user.name}
             <div className="profileDropDownItems">
               {type !== "profile" && (
                 <>
-                  <span className="myProfile" onClick={handleClick4}>
+                  <span
+                    className="myProfile"
+                    onClick={() => navigate("/Profile")}
+                  >
                     Hesabım
                   </span>
                 </>

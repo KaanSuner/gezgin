@@ -140,5 +140,21 @@
   background-color: #42b72a;
 }
 
+.accPersonNumber{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: #42b72a;
+  border-width: 2px;
+}
 
-
+.accPerson{
+  padding: 3%;
+  transform: scale(1.1);
+}

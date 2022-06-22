@@ -9,12 +9,15 @@ import TravelOrAcc from "./pages/travelOrAcc/TravelOrAcc.jsx";
 import { AuthContext } from "./context/AuthContext.js";
 import { useContext } from "react";
 import Forgot from "./pages/login/ForgotPassword/ForgotPassword.jsx";
-import ShareAcc from "./pages/profile/ShareAcc/ShareAcc.jsx";
-import ShareTravel from "./pages/profile/ShareTravel/ShareTravel.jsx";
-import SelectTravel from "./pages/home/travel/SelectTravel/SelectTravel.jsx";
-import MyTravels from "./pages/profile/MyTravels/MyTravels.jsx";
+import ShareAcc from "./pages/profile/Share/ShareAcc/ShareAcc.jsx";
+import ShareTravel from "./pages/profile/Share/ShareTravel/ShareTravel.jsx";
 import TravelDetail from "./pages/offerDetails/travel/travelDetail.jsx";
 import AccDetail from "./pages/offerDetails/accomodation/accDetail.jsx";
+import MyAccRsv from "./pages/profile/MyReservations/accomodation/myAccReservations.jsx";
+import MyTravelRsv from "./pages/profile/MyReservations/travel/myTravelReservations.jsx";
+import MyAccOffers from "./pages/profile/myOffers/accomodation/myOffersAcc.jsx";
+import MyTravelOffers from "./pages/profile/myOffers/travel/myOffersTravel.jsx";
+import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -32,35 +35,15 @@ function App() {
         <Route exact path="/forgotPassword" element={<Forgot/>}></Route>
         <Route exact path="/shareAcc" element={user?<ShareAcc/>:<Login/>}></Route>
         <Route exact path="/shareTravel" element={user?<ShareTravel/>:<Login/>}></Route>
-        <Route exact path="/SelectTravel" element={<SelectTravel/>}></Route>
-        <Route exact path="/MyTravel" element={<MyTravels/>}></Route>
-        <Route exact path="/travel/:id" element={<TravelDetail/>}></Route>
-        <Route exact path="/accomodation/:id" element={<AccDetail/>}></Route>
+        <Route exact path="/travel/:id" element={user?<TravelDetail/>:<Login/>}></Route>
+        <Route exact path="/accomodation/:id" element={user?<AccDetail/>:<Login/>}></Route>
+        <Route exact path="/Profile/myAccRsv" element={user?<MyAccRsv/>:<Login/>}></Route>
+        <Route exact path="/Profile/myTravelRsv" element={user?<MyTravelRsv/>:<Login/>}></Route>
+        <Route exact path="/Profile/myAccOffers" element={user?<MyAccOffers/>:<Login/>}></Route>
+        <Route exact path="/Profile/myTravelOffers" element={user?<MyTravelOffers/>:<Login/>}></Route>
+        <Route exact path="/api/auth/reset-password/:token" element={<ResetPassword/>}></Route>
       </Routes>
   </BrowserRouter>
   );
 }
-
-/* function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<TravelOrAcc />}></Route>
-        <Route path="/accomodation" element={<Accomodation />}></Route>
-        <Route path="/travel" element={<Travel />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/Profile" element={<Profile />}></Route>
-        <Route path="/Register" element={<Register />}></Route>
-        <Route path="/UpdateProfile" element={<UpdateProfile />}></Route>
-        <Route path="login/forgotPassword" element={<Forgot />}></Route>
-        <Route path="/forgotPassword" element={<Forgot />}></Route>
-        <Route path="/shareAcc" element={<ShareAcc />}></Route>
-        <Route path="/shareTravel" element={<ShareTravel />}></Route>
-        <Route path="/SelectTravel" element={<SelectTravel />}></Route>
-        <Route path="/MyTravel" element={<MyTravels />}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
-} */
-
 export default App;

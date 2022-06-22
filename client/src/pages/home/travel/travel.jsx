@@ -7,12 +7,14 @@ import { useContext, useState } from "react";
 import * as rdrLocales from "react-date-range/dist/locale";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
 import { AuthContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
+import { SearchContext } from "../../../context/SearchContext";
 
 const Travel = () => {
   const { user } = useContext(AuthContext);
+  const currentDate=new Date().toLocaleDateString("tr-TR")
+  const { dispatch } = useContext(SearchContext);
   const [travelDate, setTravelDate] = useState(new Date());
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
@@ -32,15 +34,11 @@ const Travel = () => {
 
   const handleClick = () => {
     reFetch();
+    dispatch({ type: "NEW_SEARCH", payload: { personNumber } });
   };
 
   const { data, loading, error, reFetch } = useFetch(
-    `/travel/?userId=${
-      user._id
-    }&departureCity=${departure}&arrivalCity=${destination}&departureDate=${format(
-      travelDate,
-      "yyyy-MM-dd"
-    )}`
+    `/travel/?userId=${user._id}&departureCity=${departure}&arrivalCity=${destination}&departureDate=${travelDate.toLocaleDateString("tr-TR")}&personNumber=${personNumber.adult}`
   );
 
   return (
@@ -54,7 +52,10 @@ const Travel = () => {
             ) : (
               <>
                 {data.map((item) => (
-                  <Link to={`/travel/${item._id}`}  style={{ textDecoration: 'none' ,color:"black"}}>
+                  <Link
+                    to={`/travel/${item._id}`}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
                     <SearchResults item={item} key={item._id} />
                   </Link>
                 ))}
@@ -92,6 +93,8 @@ const Travel = () => {
                   selected={travelDate}
                   onChange={(date) => setTravelDate(date)}
                   locale={rdrLocales.tr}
+                  dateFormat="dd.MM.yyyy"
+                  minDate={new Date()}
                 />
               </span>
             </div>

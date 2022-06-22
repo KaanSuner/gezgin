@@ -42,8 +42,6 @@ export default function Register() {
     }
   };
 
-  const handleClick2 = () => navigate("/login");
-
   return (
     <div className="register">
       <div className="registerWrapper">
@@ -144,7 +142,7 @@ export default function Register() {
             <button className="registerButton" type="submit">
               Kayıt ol
             </button>
-            <button className="registerLoginButton" onClick={handleClick2}>
+            <button className="registerLoginButton" onClick={() => navigate("/login")}>
               Hesabın varsa giriş yap
             </button>
           </form>

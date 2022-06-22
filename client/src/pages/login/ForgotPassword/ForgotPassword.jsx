@@ -1,11 +1,11 @@
 import "./ForgotPassword.css";
 import { useNavigate } from "react-router-dom";
-import Userfront from "@userfront/core";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
   
   const handleClick=()=>{
+    
   }
   const handleClick2 = () => navigate("/login");
 

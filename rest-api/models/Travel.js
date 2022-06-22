@@ -24,7 +24,7 @@ const TravelSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    
+
     price: {
       type: String,
       required: true,
@@ -36,7 +36,7 @@ const TravelSchema = new mongoose.Schema(
     },
 
     departureDate: {
-      type: Date,
+      type: String,
       required: true,
     },
 
@@ -61,14 +61,20 @@ const TravelSchema = new mongoose.Schema(
     },
 
     maxperson: {
-      type:Number,
+      type: Number,
       required: true,
     },
 
-    reserveSeats:{
-      type:Number,
+    reserveSeats: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+
+    unReserveSeats: {
+      type: Number,
       required:true,
-      default:0
+      default: 0,
     },
 
     bookers: {
@@ -78,27 +84,16 @@ const TravelSchema = new mongoose.Schema(
 
     rating: {
       type: Number,
-      min:0,
-      max:5
+      min: 0,
+      max: 5,
     },
-
-    departureLat:{
-      type:Number
-    },
-
-    departureLong:{
-      type:Number
-    },
-
-    arrivalLat:{
-      type:Number
-    },
-
-    arrivalLong:{
-      type:Number
-    },
-
+    
     isAvailable: {
+      type: Boolean,
+      default: true,
+    },
+
+    isActive: {
       type: Boolean,
       default: true,
     },

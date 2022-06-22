@@ -1,0 +1,22 @@
+.myAccOfferContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .myAccOfferWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .myAccOfferTitle{
+    color: #42a72b;
+    font-weight: bold;
+  }
+  
+  .myAccOfferResult {
+    flex: 4;
+  }

@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGO_URL, () => {
 //Middleware
 app.use(cookieParser());
 app.use(express.json());
+express.urlencoded({ extended: true });
 app.use(helmet());
 app.use(morgan("common"));
 

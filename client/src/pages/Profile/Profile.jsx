@@ -1,40 +1,97 @@
-import avatar from "./avatar.jpg";
 import "./Profile.css";
 import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from "../../components/footer/footer";
 import React from "react";
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import Avatar from "../../components/avatar/avatar.jsx";
 
-export default function Profile(){
-    return(
-        <>
-        <Navbar type="profile"/>
-        <div className="container">
-            <div className="row">
-                <div className="col-4">
-                    <br /><br />
-                    <img src={avatar} className="image" alt="" />
-                    <br /><br /><br />
-                    <div className="butons btn-group-vertical">
-                        <li className="btn"><Link  to={"../UpdateProfile"}>Profili düzenle</Link></li>
-                        <li className="btn"><Link  to={"../shareAcc"}>Konaklama Paylaş</Link></li>
-                        <li className="btn"><Link  to={"../ShareTravel"}>Yolculuk Paylaş</Link></li>
-                        <li className="btn"><Link  to={"../MyTravel"}>Yolculuklarım</Link></li>
-                        <a href="#" className="btn">Konaklamalarım</a>
-                        
-                    </div>
-                </div>
-                <div className="col-8">
-                    <h2 className="text">Merhaba burada profilini yönetebilir ve mevcut tekliflerini gözden geçirebilirsin</h2>
-                </div>
+export default function Profile() {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Navbar type="profile" />
+      <div className="profileContainer">
+        <div className="profileWrapper">
+          <div className="profileLeft">
+          <div className="profile_avatar">
+
+          <Avatar/>
+          </div>
+            <button
+              className="button"
+              onClick={() => navigate("/UpdateProfile")}
+            >
+              Profili düzenle
+            </button>
+            <div className="makeOfferDropDown">
+              <button className="button">Teklif Oluştur</button>
+              <div className="makeOfferDropDownItems">
+                <button
+                  className="button"
+                  onClick={() => navigate("/shareTravel")}
+                >
+                  Seyahat
+                </button>
+
+                <button
+                  className="button"
+                  onClick={() => navigate("/shareAcc")}
+                >
+                  Konaklama
+                </button>
+              </div>
             </div>
+            <div className="myReservationsDropDown">
+              <button className="button">Rezervasyonlarım</button>
+              <div className="myReservationsDropDownItems">
+                <button
+                  className="button"
+                  onClick={() => navigate("/Profile/myTravelRsv")}
+                >
+                  Seyahat
+                </button>
+                <button
+                  className="button"
+                  onClick={() => navigate("/Profile/myAccRsv")}
+                >
+                  Konaklama
+                </button>
+              </div>
+            </div>
+            <div className="myOffersDropDown">
+              <button className="button">Tekliflerim</button>
+              <div className="myOffersDropDownItems">
+                <button
+                  className="button"
+                  onClick={() => navigate("/Profile/myTravelOffers")}
+                >
+                  Seyahat
+                </button>
+                <button
+                  className="button"
+                  onClick={() => navigate("/Profile/myAccOffers")}
+                >
+                  Konaklama
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="profileRight">
+            <h2 className="text">
+              Merhaba {user.name}. Burada profilini yönetebilir ve mevcut
+              tekliflerini gözden geçirebilirsin.
+            </h2>
+          </div>
         </div>
-        <Footer/>
-        </>
-    )
+      </div>
+      <Footer />
+    </>
+  );
 }
-
-
 
 // <div class="update-profile">
 //    <form action="" method="post" enctype="multipart/form-data">

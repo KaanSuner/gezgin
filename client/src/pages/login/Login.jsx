@@ -29,6 +29,7 @@ export default function Login() {
     loginCall(credentials, dispatch);
   };
 
+
   const handleClick2 = () => navigate("/register");
 
   console.log(user);

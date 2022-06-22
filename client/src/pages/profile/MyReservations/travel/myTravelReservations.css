@@ -1,0 +1,24 @@
+
+.rsvTravelContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .rsvTravelWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .rsvTitle{
+    color: #42a72b;
+    font-weight: bold;
+  }
+  
+  .rsvTravelResult {
+    flex: 4;
+  }
+  

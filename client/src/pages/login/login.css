@@ -76,6 +76,7 @@
   font-weight: bold;
   cursor: pointer;
   color: white;
+  border: none;
 }
 
 .loginForgot {
@@ -94,4 +95,5 @@
   font-weight: bold;
   cursor: pointer;
   color: black;
+  border: none;
 }

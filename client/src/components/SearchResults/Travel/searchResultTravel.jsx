@@ -27,7 +27,7 @@ const searchResultTravel = ({item}) => {
       </div>
       <div className="travelInfo3">
         <div className="travelPrice">{item.price}</div>
-        <div className="travelAvailability"> Boş koltuk: 1/{item.maxperson}</div>
+        <div className="travelAvailability"> Boş koltuk: {item.reserveSeats}/{item.maxperson}</div>
       </div>
     </div>
   );

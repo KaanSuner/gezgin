@@ -4,18 +4,17 @@ import Footer from "../../../components/footer/footer.jsx";
 import SearchResults from "../../../components/SearchResults/Accomodation/searchResultAcc.jsx";
 import { DateRange } from "react-date-range";
 import { useContext, useState } from "react";
-import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css";
 import * as rdrLocales from "react-date-range/dist/locale";
-import useFetch from "../../../hooks/useFetch";
+import useFetch from "../../../hooks/useFetch.js";
 import { AuthContext } from "../../../context/AuthContext";
-import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import { SearchContext } from "../../../context/SearchContext";
 
-const List = () => {
-  const navigate = useNavigate();
+const Acc = () => {
   const { user } = useContext(AuthContext);
+  const {dispatch}=useContext(SearchContext);
   const [accDate, setaccDate] = useState([
     {
       startDate: new Date(),
@@ -24,7 +23,6 @@ const List = () => {
     },
   ]);
   const [city, setCity] = useState("");
-  const [openPersonNumber, setOpenPersonNumber] = useState(false);
   const [personNumber, setPersonNumber] = useState({
     adult: 1,
   });
@@ -40,14 +38,18 @@ const List = () => {
   };
 
   const handleClick = () => {
+    dispatch({type:"NEW_SEARCH",payload:{personNumber}})
     reFetch();
   };
 
   const { data, loading, error, reFetch } = useFetch(
-    `/acc/?userId=${user._id}&City=${city}&bookingDate=${format(
-      accDate[0].startDate,
-      "yyyy-MM-dd"
-    )}&leavingDate=${format(accDate[0].endDate, "yyyy-MM-dd")}`
+    `/acc/?userId=${
+      user._id
+    }&City=${city}&bookingDate=${accDate[0].startDate.toLocaleDateString(
+      "tr-TR"
+    )}&leavingDate=${accDate[0].endDate.toLocaleDateString(
+      "tr-TR"
+    )}&personNumber=${personNumber.adult}`
   );
 
   return (
@@ -62,8 +64,9 @@ const List = () => {
               <>
                 {data.map((item) => (
                   <Link
-                    to={`/acc/${item._id}`}
+                    to={`/accomodation/${item._id}`}
                     style={{ textDecoration: "none", color: "black" }}
+  
                   >
                     <SearchResults item={item} key={item._id} />
                   </Link>
@@ -85,10 +88,9 @@ const List = () => {
 
             <div className="listAccItem">
               <label>Hangi tarihlerde konaklayacaksın?</label>
-              <span>{`${format(accDate[0].startDate, "dd/MM/yyyy")} -> ${format(
-                accDate[0].endDate,
-                "dd/MM/yyyy"
-              )}`}</span>
+              <span>{`${accDate[0].startDate.toLocaleDateString(
+                "tr-TR"
+              )} -> ${accDate[0].endDate.toLocaleDateString("tr-TR")}`}</span>
               <DateRange
                 locale={rdrLocales.tr}
                 editableDateInputs={true}
@@ -103,35 +105,24 @@ const List = () => {
 
             <div className="listAccItem">
               <label>Kişi Sayısı</label>
-              <span
-                onClick={() => setOpenPersonNumber(!openPersonNumber)}
-                className="accPersonNumber"
-              >{`${personNumber.adult} kişi`}</span>
-              {openPersonNumber && (
-                <div className="accPersonNumberOptions">
-                  <div className="accPersonNumberOptionItem">
-                    <span className="accPersonNumberText">Yetişkin</span>
-                    <div className="accNumberCounter">
-                      <button
-                        disabled={personNumber.adult <= 1}
-                        className="accPersonCounterButton"
-                        onClick={() => handleNumber("adult", "d")}
-                      >
-                        -
-                      </button>
-                      <span className="accPersonCounterNumber">
-                        {personNumber.adult}
-                      </span>
-                      <button
-                        className="accPersonCounterButton"
-                        onClick={() => handleNumber("adult", "i")}
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
+              <span className="accPersonNumber">
+                <span className="accPerson">{`${personNumber.adult}`}</span>
+                <div className="accNumberCounter">
+                  <button
+                    className="accPersonCounterButton"
+                    onClick={() => handleNumber("adult", "i")}
+                  >
+                    +
+                  </button>
+                  <button
+                    disabled={personNumber.adult <= 1}
+                    className="accPersonCounterButton"
+                    onClick={() => handleNumber("adult", "d")}
+                  >
+                    -
+                  </button>
                 </div>
-              )}
+              </span>
             </div>
             <div className="listAccItem">
               <button className="accSearchButton" onClick={handleClick}>
@@ -146,4 +137,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default Acc;

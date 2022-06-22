@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./accDetail.css";
 import Navbar from "../../../components/navbar/navbar.jsx";
 import useFetch from "../../../hooks/useFetch.js";
-import { useLocation } from "react-router";
-import moment from "moment";
+import { useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../../context/AuthContext";
+import axios from "axios";
+import { SearchContext } from "../../../context/SearchContext.js";
 
 const AccDetail = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading, error } = useFetch(`/acc/get/${id}`);
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const { personNumber } = useContext(SearchContext);
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    if (data.userId !== user._id) {
+      if (!data.bookers.includes(user._id)) {
+        if (personNumber.adult <= data.unReserveSeats) {
+          try {
+            for (let i = 0; i < personNumber.adult; i++) {
+              await axios.put(`/acc/reserve/${id}/${user._id}`);
+            }
+            await axios.put(`/acc/updateMyAccreservation/${user._id}/${id}/${personNumber.adult}`);
+            navigate("/Profile");
+          } catch (err) {
+            console.log(err);
+          }
+        } else {
+          console.log("no available seat");
+        }
+      } else {
+        console.log("You have already a reservation");
+      }
+    } else {
+      console.log("You cannot book your own travel offer.");
+    }
+  };
 
   return (
     <div>
@@ -29,7 +60,9 @@ const AccDetail = () => {
                   />
                   <div className="accDetailUserInfoStringBox">
                     <h3 className="accDetailUsername">{data.username}</h3>
-                    <h4 className="accDetailNameSurname">{data.name} {data.surname}</h4>
+                    <h4 className="accDetailNameSurname">
+                      {data.name} {data.surname}
+                    </h4>
                   </div>
                 </div>
                 <h1 className="accDetailPrice">{data.price}</h1>
@@ -39,7 +72,7 @@ const AccDetail = () => {
                   <div className="accDetailDownLeftString">
                     <div className="accDetailDownLeftStringBox1">
                       <span className="accDetailDepartureDate">
-                        Konaklama Aralığı: {moment(data.bookingdate).format("DD.MM.YYYY")} - {moment(data.leavingdate).format("DD.MM.YYYY")}
+                        Konaklama Aralığı: {data.bookingdate} - {data.leavingdate}
                       </span>
                       <span className="accDetailUserPhone">
                         İletişim: {data.phone}
@@ -52,10 +85,14 @@ const AccDetail = () => {
                     </div>
                   </div>
 
-                  <textarea className="accDetailDescription ">{data.description}</textarea>
+                  <span className="accDetailDescription ">
+                    {data.description}
+                  </span>
                 </div>
                 <div className="accDetailDownRight">
-                  <button className="accReserve">Reserve et</button>
+                  <button className="accReserve" onClick={handleClick}>
+                    Reserve et
+                  </button>
                 </div>
               </div>
             </div>

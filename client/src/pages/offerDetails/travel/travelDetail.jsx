@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./travelDetail.css";
 import Navbar from "../../../components/navbar/navbar.jsx";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import useFetch from "../../../hooks/useFetch.js";
-import { useLocation } from "react-router";
-import moment from 'moment'
+import { useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../../context/AuthContext.js";
+import axios from "axios";
+import { SearchContext } from "../../../context/SearchContext.js";
 
 const TravelDetail = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading, error } = useFetch(`/travel/get/${id}`);
-  
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const { personNumber } = useContext(SearchContext);
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    if (data.userId !== user._id) {
+      if (!data.bookers.includes(user._id)) {
+        if (personNumber.adult <= data.unReserveSeats) {
+          try {
+            for (let i = 0; i < personNumber.adult; i++) {
+              await axios.put(`/travel/reserve/${id}/${user._id}`);
+            }
+            await axios.put(`/travel/updateMyTravelreservation/${user._id}/${id}/${personNumber.adult}`);
+            navigate("/Profile");
+          } catch (err) {
+            console.log(err);
+          }
+        } else {
+          console.log("no available seat");
+        }
+      } else {
+        console.log("You have already a reservation");
+      }
+    } else {
+      console.log("You cannot book your own travel offer.");
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -61,7 +92,8 @@ const TravelDetail = () => {
                   <div className="travelDetailDownLeftString">
                     <div className="travelDetailDownLeftStringBox1">
                       <span className="travelDetailDepartureDate">
-                        Yolculuk tarihi: {moment(data.departureDate).format("DD.MM.YYYY")}
+                        Yolculuk tarihi:{" "}
+                        {data.departureDate}
                       </span>
                       <span className="travelDetailUserPhone">
                         İletişim: {data.phone}
@@ -74,12 +106,14 @@ const TravelDetail = () => {
                     </div>
                   </div>
 
-                  <textarea className="travelDetailDescription ">
+                  <span className="travelDetailDescription ">
                     {data.description}
-                  </textarea>
+                  </span>
                 </div>
                 <div className="travelDetailDownRight">
-                  <button className="travelReserve">Reserve et</button>
+                  <button className="travelReserve" onClick={handleClick}>
+                    Reserve et
+                  </button>
                 </div>
               </div>
             </div>

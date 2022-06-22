@@ -2,8 +2,10 @@ import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+
 export const register = async (req, res, next) => {
-  try {
+  
+    try {
     //generate a new hashed password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -23,7 +25,7 @@ export const register = async (req, res, next) => {
     const user = await newUser.save();
     res.status(200).json(user);
   } catch (err) {
-    next(err);
+    res.status(500).json({msg:err.message})
   }
 };
 
@@ -38,14 +40,16 @@ export const login = async (req, res, next) => {
     );
 
     if (!validPassword) return next(400, "Wrong Password or Email");
-    const token = jwt.sign({ id: user._id },process.env.JWT);
+    const token = jwt.sign({ id: user._id }, process.env.JWT);
 
     const { password, isAdmin, ...otherdetails } = user._doc;
-    res.cookie("accessToken",token,{httpOnly:true,}).status(200).json({ ...otherdetails });
+    res
+      .cookie("accessToken", token, { httpOnly: true })
+      .status(200)
+      .json({ ...otherdetails });
 
     res.status(200).json(user);
   } catch (err) {
     next(err);
   }
 };
-

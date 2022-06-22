@@ -1,0 +1,77 @@
+
+.accPassiveRsvContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .accPassiveRsv{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border: 3px solid #42a72b;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .accRsvPassivebuttons{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .accRsvPassiveInfo1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5spx;
+    gap: 5px;
+  }
+
+  .accRsvPassiveInfo2 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 20px;
+  }
+  
+  .accRsvPassiveInfo3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+  }
+  
+  .accRsvPassivePrice{
+      font-weight: bold;
+      font-size: 175%;
+  }
+  
+  .accRsvPassiveAvatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .accRsvPassiveCancel{
+    margin: 5%;
+    border-radius: 12px;
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    background-color:white;
+    color: red;
+    border: 2px solid red;
+  }
+  
+  .accRsvPassiveText{
+    font-weight: 600;
+    color: red;
+  }

@@ -1,0 +1,77 @@
+
+.myAccPassiveOffersContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .myAccPassiveOffers{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border: 3px solid #42a72b;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .myAccPassiveOffersbuttons{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .myAccPassiveOffersInfo1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5spx;
+    gap: 5px;
+  }
+
+  .myAccPassiveOffersInfo2 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 20px;
+  }
+  
+  .myAccPassiveOffersInfo3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+  }
+  
+  .myAccPassiveOffersPrice{
+      font-weight: bold;
+      font-size: 175%;
+  }
+  
+  .myAccPassiveOffersAvatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .myAccPassiveOffersCancel{
+    margin: 5%;
+    border-radius: 12px;
+    padding: 5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    background-color:white;
+    color: red;
+    border: 2px solid red;
+  }
+  
+  .myAccPassiveOffersText{
+    font-weight: 600;
+    color: red;
+  }
