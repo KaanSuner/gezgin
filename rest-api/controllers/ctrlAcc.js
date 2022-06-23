@@ -15,6 +15,7 @@ export const createAcc = async (req, res, next) => {
     city: req.body.city,
     maxperson: req.body.maxperson,
     unReserveSeats: req.body.maxperson,
+    avatar: req.body.avatar,
   });
   try {
     const savedAcc = await newAcc.save();
@@ -36,10 +37,12 @@ export const addMyAccOffer = async (req, res, next) => {
           reservationType: "accomodation",
           price: req.body.price,
           maxperson: req.body.maxperson,
+          reserveSeats: 0,
           bookingdate: req.body.bookingdate,
           leavingdate: req.body.leavingdate,
           city: req.body.city,
           isActive: true,
+          avatar: req.body.avatar,
         },
       },
     });
@@ -83,6 +86,13 @@ export const reserveAcc = async (req, res, next) => {
       $push: { bookers: req.params.userId },
       $inc: { reserveSeats: 1, unReserveSeats: -1 },
     });
+
+    await User.updateOne(
+      { _id: acc.userId, myAccOffers: { offerId: req.params.offerId } },
+      {
+        $inc: { "myAccOffers.$.reserveSeats": 1 },
+      }
+    );
     res.status(200).json("Accomodation has been reserved.");
   } catch (err) {
     next(err);
@@ -138,6 +148,7 @@ export const addMyAccReservation = async (req, res, next) => {
           leavingdate: acc.leavingdate,
           city: acc.city,
           isActive: true,
+          avatar: acc.avatar,
         },
       },
     });
@@ -149,6 +160,7 @@ export const addMyAccReservation = async (req, res, next) => {
 
 export const cancelAccRsv = async (req, res, next) => {
   const personNumber = req.params.personNumber;
+  const acc = await Acc.findById(req.params.offerId);
   try {
     await Acc.updateMany(
       { _id: req.params.offerId },
@@ -170,6 +182,12 @@ export const cancelAccRsv = async (req, res, next) => {
       { _id: req.params.userId },
       {
         $pull: { myAccReservations: { _id: req.params.reservationId } },
+      }
+    );
+    await User.updateOne(
+      { _id: acc.userId, myAccOffers: { offerId: req.params.offerId } },
+      {
+        $inc: { "myAccOffers.$.reserveSeats": -1 },
       }
     );
     res.status(200).json("Accomodation has been cancelled.");

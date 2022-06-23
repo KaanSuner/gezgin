@@ -55,6 +55,10 @@
   border-width: 2px;
 }
 
+.listAccItem > input:focus {
+  outline: none;
+}
+
 .listAccItem > span {
   height: 40px;
   padding: 5px;

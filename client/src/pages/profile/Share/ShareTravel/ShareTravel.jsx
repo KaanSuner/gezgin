@@ -52,6 +52,7 @@ export default function ShareTravel() {
       unReserveSeats: personNumber.adult,
       description: description.current.value,
       departureDate: Date,
+      avatar: user.avatar,
     };
     try {
       await axios.post("/travel/create", newTravel);

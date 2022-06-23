@@ -17,11 +17,11 @@ import MyAccRsv from "./pages/profile/MyReservations/accomodation/myAccReservati
 import MyTravelRsv from "./pages/profile/MyReservations/travel/myTravelReservations.jsx";
 import MyAccOffers from "./pages/profile/myOffers/accomodation/myOffersAcc.jsx";
 import MyTravelOffers from "./pages/profile/myOffers/travel/myOffersTravel.jsx";
-import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
 import Activation from "./pages/activation/activation.jsx";
+import ResetPassword from "./pages/login/resetPassword/resetPassword.jsx";
 
 function App() {
-  const { user } = useContext(AuthContext);
+  const { user} = useContext(AuthContext);
   return (
     <BrowserRouter>
       <Routes>

@@ -89,7 +89,7 @@ export default function Login() {
                 )}
               </button>
 
-              <Link to={"./forgotPassword"} className="loginForgot">
+              <Link to={"/forgotPassword"} className="loginForgot">
                 <span>Parolanı mı unuttun?</span>
               </Link>
             </form>

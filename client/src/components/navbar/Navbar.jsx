@@ -37,7 +37,7 @@ const Navbar = ({ type }) => {
           )}
 
           <div className="profileDropDown">
-            {user.name}
+            {user.name} 
             <div className="profileDropDownItems">
               {type !== "profile" && (
                 <>

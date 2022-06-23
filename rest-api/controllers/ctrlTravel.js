@@ -17,6 +17,7 @@ export const createTravel = async (req, res, next) => {
     departureDate: req.body.departureDate,
     maxperson: req.body.maxperson,
     unReserveSeats: req.body.maxperson,
+    avatar: req.body.avatar,
   });
 
   try {
@@ -39,12 +40,14 @@ export const addMyTravelOffer = async (req, res, next) => {
           offerType: "travel",
           price: req.body.price,
           maxperson: req.body.maxperson,
+          reserveSeats: 0,
           departureDate: req.body.departureDate,
           departureCity: req.body.departureCity,
           departureTime: req.body.departureTime,
           arrivalCity: req.body.arrivalCity,
           arrivalTime: req.body.arrivalTime,
           isActive: true,
+          avatar: req.body.avatar,
         },
       },
     });
@@ -80,6 +83,7 @@ export const updateTravel = async (req, res, next) => {
 
 export const reserveTravel = async (req, res, next) => {
   const travel = await Travel.findById(req.params.offerId);
+
   try {
     if (travel.reserveSeats == travel.maxperson - 1) {
       await travel.updateOne({ $set: { isAvailable: false } });
@@ -88,6 +92,13 @@ export const reserveTravel = async (req, res, next) => {
       $push: { bookers: req.params.userId },
       $inc: { reserveSeats: 1, unReserveSeats: -1 },
     });
+
+    await User.updateOne(
+      { _id: travel.userId, myTravelOffers: { offerId: req.params.offerId } },
+      {
+        $inc: { "myTravelOffers.$.reserveSeats": 1 },
+      }
+    );
 
     res.status(200).json("Travel has been reserved.");
   } catch (err) {
@@ -150,6 +161,7 @@ export const addMyTravelReservation = async (req, res, next) => {
           arrivalCity: travel.arrivalCity,
           arrivalTime: travel.arrivalTime,
           isActive: true,
+          avatar: user.avatar,
         },
       },
     });
@@ -161,6 +173,7 @@ export const addMyTravelReservation = async (req, res, next) => {
 
 export const cancelTravelRsv = async (req, res, next) => {
   const personNumber = req.params.personNumber;
+  const travel = await Travel.findById(req.params.offerId);
   try {
     await Travel.updateMany(
       { _id: req.params.offerId },
@@ -182,6 +195,12 @@ export const cancelTravelRsv = async (req, res, next) => {
       { _id: req.params.userId },
       {
         $pull: { myTravelReservations: { _id: req.params.reservationId } },
+      }
+    );
+    await User.updateOne(
+      { _id: travel.userId, myAccOffers: { offerId: req.params.offerId } },
+      {
+        $inc: { "myTravelOffers.$.reserveSeats": -1 },
       }
     );
     res.status(200).json("Travel has been cancelled.");

@@ -10,6 +10,7 @@ import {
   info,
   update,
   logout,
+  reset2,
 } from "../controllers/ctrlAuth.js";
 import {auth} from "../middlewares/auth.js";
 
@@ -30,12 +31,13 @@ router.post("/forgot-password", forgot);
 
 //Reset password
 router.post("/reset-password",auth, reset);
+router.post("/reset-password2", reset2);
 
 //Get user info
-router.get("/user-info",auth, info);
+router.get("/user-info/:id",info);
 
 //Update user info
-router.get("/update-info",auth, update);
+router.patch("/update-info",update);
 
 //logout
 router.get("/logout",logout);

@@ -1,6 +1,7 @@
 import "./myAccPassiveOffers.css";
 import React from "react";
 import axios from "axios";
+import HomeIcon from '@mui/icons-material/Home';
 
 const myAccPassiveOffers = ({item,user}) => {
   const reloadPage = () => {
@@ -33,7 +34,7 @@ const myAccPassiveOffers = ({item,user}) => {
         </div>
         <div className="myAccPassiveOffersInfo3">
           <span className="myAccPassiveOffersPrice">{item.price}</span>
-          <div className="myAccPassiveOffersText"> Sonlandırılmış Teklif</div>
+          <div className="myAccPassiveOffersText"> <HomeIcon/> Sonlandırılmış Teklif</div>
         </div>
       </div>
       <div className="myAccPassiveOffersbuttons">

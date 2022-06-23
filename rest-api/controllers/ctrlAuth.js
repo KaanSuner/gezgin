@@ -2,7 +2,7 @@ import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { createToken } from "../helpers/createToken.js";
-import { sendEmailRegister } from "../helpers/sendMail.js";
+import { sendEmailRegister, sendEmailReset } from "../helpers/sendMail.js";
 
 /* export const register = async (req, res, next) => {
   
@@ -97,7 +97,7 @@ export const register = async (req, res, next) => {
       phone: req.body.phone,
     };
 
-    const user = await User.findOne({email:newUser.email});
+    const user = await User.findOne({ email: newUser.email });
     if (user)
       return res
         .status(400)
@@ -173,21 +173,21 @@ export const forgot = async (req, res, next) => {
   try {
     // get email
     const { email } = req.body;
+    console.log(email);
 
     // check email
     const user = await User.findOne({ email });
     if (!user)
-      return res
-        .status(400)
-        .json({ msg: "This email is not registered in our system." });
+      return res.status(400).json({ msg: "This email is not registered." });
 
     // create ac token
     const ac_token = createToken.access({ id: user.id });
 
     // send email
-    const url = `http://localhost:3000/auth/reset-password/${ac_token}`;
+    const url = `http://localhost:3000/api/auth/reset-password/${ac_token}`;
     const name = user.name;
-    sendMail.sendEmailReset(email, url, "Parola Sıfırlama", name);
+    console.log(name);
+    sendEmailReset(email, url, "Parola Sıfırlama", name);
 
     // success
     res
@@ -201,7 +201,7 @@ export const forgot = async (req, res, next) => {
 export const reset = async (req, res, next) => {
   try {
     // get password
-    const { password } = req.body;
+    const { password} = req.body;
 
     // hash password
     const salt = await bcrypt.genSalt();
@@ -219,13 +219,34 @@ export const reset = async (req, res, next) => {
     res.status(500).json({ msg: err.message });
   }
 };
+export const reset2 = async (req, res, next) => {
+  try {
+    // get password
+    const { password,user } = req.body;
+
+    // hash password
+    const salt = await bcrypt.genSalt();
+    const hashPassword = await bcrypt.hash(password, salt);
+
+    // update password
+    await User.findOneAndUpdate(
+      { _id: user._id },
+      { password: hashPassword }
+    );
+
+    // reset success
+    res.status(200).json({ msg: "Password was updated successfully." });
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
+};
 
 export const info = async (req, res) => {
   try {
     // get info -password
-    const user = await User.findById(req.user.id).select("-password");
+    const user = await User.findById({_id:req.params.id});
     // return user
-    res.status(200).json({ user });
+    res.status(200).json(user);
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
@@ -234,16 +255,16 @@ export const info = async (req, res) => {
 export const update = async (req, res) => {
   try {
     // get info
-    const { name, avatar, surname, phone, password, username, email } =
+    const { name, avatar, surname, phone, username, email,id} =
       req.body;
-
+     
     // update
     await User.findOneAndUpdate(
-      { _id: req.user.id },
-      { name, avatar, surname, phone, password, username, email }
+      { _id: id },
+      { name, avatar, surname, phone,  username, email }
     );
     // success
-    res.status(200).json({ msg: "Update success." });
+    res.status(200).json({ msg: "User was updated successfully." });
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }

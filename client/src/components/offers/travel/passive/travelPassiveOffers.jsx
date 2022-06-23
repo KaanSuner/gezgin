@@ -1,6 +1,8 @@
 import "./travelPassiveOffers.css";
 import React from "react";
 import axios from "axios";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import GarageIcon from "@mui/icons-material/Garage";
 
 const TravelPassiveOffers = ({item,user}) => {
   const reloadPage = () => {
@@ -23,15 +25,32 @@ const TravelPassiveOffers = ({item,user}) => {
         <span className="travelPassiveOffersDepartureDate">
             {item.departureDate}
           </span>
+          <span className="travelPassiveOfferAvailability"> Doluluk: {item.reserveSeats}/{item.maxperson}</span>
         </div>
         <div className="travelPassiveOffersInfo2">
-          <span className="travelPassiveOffersCities">
-            {item.departureCity} --> {item.arrivalCity}
+        <span className="travelPassiveDepartureBox">
+        <span className="travelPassiveOffersDepartureTime">
+            {item.departureTime}
           </span>
+        <span className="travelPassiveOffersDepartureCity">
+            {item.departureCity}
+          </span>
+
+        </span>
+          <ArrowRightAltIcon className="travelArrow" />
+          <span className="travelPassiveArrivalBox">
+        
+        <span className="travelPassiveOffersArrivalTime">
+            {item.arrivalTime}
+          </span>
+          <span className="travelPassiveOffersArrivalCity">
+            {item.arrivalCity}
+          </span>
+        </span>
         </div>
         <div className="travelPassiveOffersInfo3">
           <span className="travelPassiveOffersPrice">{item.price}</span>
-          <div className="travelPassiveOffersText"> Kapalı</div>
+          <div className="travelPassiveOffersText"><GarageIcon/> Kapalı</div>
         </div>
       </div>
       <div className="travelPassiveOffersbuttons">

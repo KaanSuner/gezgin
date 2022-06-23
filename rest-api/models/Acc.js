@@ -12,7 +12,10 @@ const AccSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+    avatar: {
+      type: String,
+      default: "https://res.cloudinary.com/duck2vdcy/image/upload/v1655842388/avatar/Placeholder_xqwinv.jpg",
+    },
     name: {
       type: String,
       required: true,

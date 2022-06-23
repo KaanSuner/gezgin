@@ -8,7 +8,6 @@
   display: flex;
   max-width: 800px;
   flex-direction: row;
-  border: 3px solid #42a72b;
   border-radius: 50px;
   height: 460px;
 }
@@ -18,10 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #42a72b;
   border-radius: 50px;
-  transform: scale(0.92);
-  border: 3px solid #febb02;
 }
 
 .button {
@@ -35,7 +31,7 @@
 }
 
 .button:hover {
-  background-color: gray;
+  background-color: #42a72b;
   color: white;
 }
 
@@ -82,7 +78,7 @@
 }
 
 .makeOfferDropDown button:hover {
-  background-color: gray;
+  background-color: #42a72b;
   color: white;
 }
 
@@ -117,7 +113,7 @@
 }
 
 .myReservationsDropDown button:hover {
-  background-color: gray;
+  background-color: #42a72b;
   color: white;
 }
 
@@ -152,7 +148,7 @@
 }
 
 .myOffersDropDown button:hover {
-  background-color: gray;
+  background-color: #42a72b;
   color: white;
 }
 

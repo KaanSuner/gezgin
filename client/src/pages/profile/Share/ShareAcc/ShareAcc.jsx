@@ -56,6 +56,7 @@ export default function ShareAcc() {
       leavingdate: endDate,
       maxperson: personNumber.adult,
       description: description.current.value,
+      avatar: user.avatar,
     };
     try {
       await axios.post("/acc/create", newAcc);

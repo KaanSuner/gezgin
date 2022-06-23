@@ -1,6 +1,7 @@
 import "./myActiveAccOffers.css";
 import React from "react";
 import axios from "axios";
+import HomeIcon from '@mui/icons-material/Home';
 
 const MyAccActiveOffers = ({ item,user }) => {
 
@@ -23,14 +24,6 @@ const MyAccActiveOffers = ({ item,user }) => {
   return (
     <div className="myAccActiveOffersContainer">
       <div className="myAccActiveOffers">
-        <div className="myAccActiveOffersInfo1">
-          <img
-            src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
-            alt=""
-            className="myAccActiveOffersAvatar"
-          />
-          <span className="myAccActiveOffersUsername">username</span>
-        </div>
         <div className="myAccActiveOffersInfo2">
           <span className="myAccActiveOffersLocation">{item.city}</span>
           <span className="myAccActiveOffersDates">
@@ -39,7 +32,7 @@ const MyAccActiveOffers = ({ item,user }) => {
         </div>
         <div className="myAccActiveOffersInfo3">
           <span className="myAccActiveOffersPrice">{item.price}</span>
-          <div className="myAccActiveOffersText"> Aktif Teklif</div>
+          <div className="myAccActiveOffersText"> <HomeIcon/> Aktif Teklif</div>
         </div>
       </div>
       <div className="myAccActiveOffersButtons">

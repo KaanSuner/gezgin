@@ -1,12 +1,14 @@
 import "./avatar.css";
 
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-const Avatar = () => {
+const Avatar = ({avatar}) => {
+  const {user}=useContext(AuthContext);
   return (
     <div className="avatar">
       <img
-        src="https://source.unsplash.com/collection/happy-people"
+        src={avatar ? avatar :user.avatar}
         alt="avatar"
       />
     </div>

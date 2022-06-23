@@ -50,7 +50,10 @@
   padding: 7px;
   border-radius: 10px;
   color: black;
-  
+}
+
+.listTravelItem > input:focus {
+  outline: none;
 }
 
 .listTravelItem > span {

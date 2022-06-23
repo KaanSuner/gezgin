@@ -4,43 +4,43 @@ const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: [true, "Username is required"],
+      required: true,
       unique: true,
       min: 3,
       max: 20,
-      trim:true
+      
     },
     name: {
       type: String,
-      required: [true, "Name is required"],
+      required:true,
       min: 3,
       max: 20,
     },
 
     surname: {
       type: String,
-      required:[ true, "Surname is required"],
+      required: true,
       min: 1,
       max: 20,
     },
 
     email: {
       type: String,
-      required: [true,"Email is required"],
+      required: true,
       max: 70,
       unique: true,
-      trim:true
+      
     },
 
     password: {
       type: String,
-      required:  [true,"Password is required"],
+      required:  true,
       min: 6,
     },
 
     phone: {
       type: String,
-      required: [true,"Phone is required"],
+      required: true,
       min: 10,
       max: 10,
       unique: true,
@@ -48,12 +48,12 @@ const UserSchema = new mongoose.Schema(
 
     gender: {
       type: String,
-      required: [true, "Gender is required"]
+      required: true, 
     },
 
     avatar: {
       type: String,
-      default: "",
+      default: "https://res.cloudinary.com/duck2vdcy/image/upload/v1655842388/avatar/Placeholder_xqwinv.jpg",
     },
 
     myTravelOffers: [
@@ -63,6 +63,7 @@ const UserSchema = new mongoose.Schema(
         username: String,
         price: String,
         maxperson: Number,
+        reserveSeats: Number,
         departureDate: String,
         departureCity: String,
         departureTime: String,
@@ -79,6 +80,7 @@ const UserSchema = new mongoose.Schema(
         offerType: String,
         price: String,
         maxperson:Number,
+        reserveSeats : Number,
         personNumber: Number,
         bookingdate: String,
         leavingdate: String,

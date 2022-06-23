@@ -7,7 +7,7 @@ const searchResultTravel = ({item}) => {
     <div className="travelResult">
       <div className="travelInfo1">
         <img
-          src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png"
+          src={item.avatar}
           alt=""
           className="travelResultItemAvatar"
         />

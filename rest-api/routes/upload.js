@@ -10,7 +10,6 @@ router.post(
   "/",
   uploadImage,
   upload,
-  auth,
   uploadController.uploadAvatar
 );
 
